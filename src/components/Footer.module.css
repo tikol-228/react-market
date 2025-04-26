@@ -1,0 +1,99 @@
+/* Footer.module.css */
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2.5rem 1.5rem;
+  background-color: #1a1a1a;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.footerLogo img {
+  width: 20px;
+  height: 35px;
+  margin-right: 1rem;
+}
+
+.footerText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  flex: 2 1 auto;
+  justify-content: center;
+}
+
+.footerLinks a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #d3d3d3;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footerLinks a:hover {
+  color: #ffffff;
+}
+
+/* Нижняя часть футера */
+.footerBottom {
+  width: 100%;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Текст авторских прав */
+.footerBottomText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: #7a7a7a;
+  margin: 0;
+}
+
+/* Контейнер ссылок (Privacy Policy, Terms of Use) */
+.footerBottomLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Стили самих ссылок */
+.footerBottomLinks a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: #d3d3d3;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footerBottomLinks a:hover {
+  color: #ffffff;
+}
+
+/* Адаптация на мобильных экранах */
+@media (max-width: 600px) {
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}

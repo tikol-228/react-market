@@ -1,0 +1,75 @@
+/* Header.module.css */
+.headerContainer {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo img {
+  height: 30px;
+  width: auto;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navLinks a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease-in-out;
+}
+
+.navLinks a:hover {
+  color: #e07a5f;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.headerActions img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.headerActions img:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .headerContainer {
+    padding: 1rem;
+  }
+
+  .headerActions {
+    gap: 1rem;
+  }
+}
