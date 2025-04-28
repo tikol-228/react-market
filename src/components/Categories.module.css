@@ -1,4 +1,14 @@
-/* Container for the Living Room card */
+/* Общий контейнер */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0 160px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Living Room карточка */
 .livingRoom {
   position: relative;
   width: 100%;
@@ -6,43 +16,34 @@
   border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  background-color: #F3F5F7;
 }
 
-/* Image inside Living Room card */
+/* Картинка в Living Room */
 .categoriesImg1 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
-/* Overlay text block for Living Room */
+/* Блок текста в Living Room */
 .livingRoom > div {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #ffffff;
+  bottom: 20px;
+  left: 20px;
+  text-align: left;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-/* Shared link style */
-.arrivalLink {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 600;
-  text-decoration: none;
-  color: #ffffff;
-  margin-top: 0.5rem;
-}
-
-.arrivalLink img {
-  margin-left: 0.5rem;
-  width: 1rem;
-  height: 1rem;
-}
-
-/* Bedroom card styling */
+/* Bedroom карточка */
 .bedroom {
   position: relative;
   width: 100%;
@@ -50,50 +51,91 @@
   border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 1rem;
+  background-color: #F3F5F7;
 }
 
-/* Text overlay for Bedroom */
+/* Текст в Bedroom */
 .bedroomText {
   position: absolute;
-  top: 20px;
+  bottom: 20px;
   left: 20px;
-  color: #ffffff;
+  text-align: left;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
+/* Картинка в Bedroom */
 .categoriesImg2 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
-/* Kitchen card styling */
+/* Kitchen карточка */
 .kitchen {
   position: relative;
   width: 100%;
   height: 280px;
   border-radius: 1rem;
   overflow: hidden;
+  background-color: #F3F5F7;
 }
 
+/* Текст в Kitchen */
 .kitchenText {
   position: absolute;
   bottom: 20px;
-  right: 20px;
-  text-align: right;
-  color: #ffffff;
+  left: 20px;
+  text-align: left;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
+/* Картинка в Kitchen */
 .cardImg1 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
-/* Responsive grid wrapper (if needed for second row) */
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+/* Стили для ссылки "Shop Now" */
+.arrivalLink {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  margin: 0; /* убираем отступ сверху */
+}
+
+.arrivalLink img {
+  margin-left: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Анимация при наведении на ссылку */
+.arrivalLink:hover {
+  color: #555555;
+}
+
+.arrivalLink:hover img {
+  transform: translateX(4px);
 }
