@@ -1,0 +1,102 @@
+/* Стили для компонента Articles */
+
+.articlesContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.articleText {
+  display: flex;
+  margin: 30px 50px;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.articleText h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.articleText p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  color: #555555;
+  line-height: 1.5;
+}
+
+.articleCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333333;
+  padding: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Стили для компонента Link внутри карточки */
+.articlesLink {
+  display: inline-flex;
+  align-items: center;
+  margin: 14px 0 14px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: black;
+}
+
+.articlesLink:hover {
+  color: #1558b0;
+}
+
+/* Иконка стрелки внутри ссылки */
+.articlesLink img {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.articleLink {
+  display: inline-flex;
+  align-items: center;
+  margin: 14px 0 14px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: black;
+}
+
+.articlesLink:hover {
+    color: #1558b0;
+}
+

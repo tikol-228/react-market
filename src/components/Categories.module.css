@@ -1,0 +1,99 @@
+/* Container for the Living Room card */
+.livingRoom {
+  position: relative;
+  width: 100%;
+  height: 575px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+/* Image inside Living Room card */
+.categoriesImg1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay text block for Living Room */
+.livingRoom > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Shared link style */
+.arrivalLink {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
+
+.arrivalLink img {
+  margin-left: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Bedroom card styling */
+.bedroom {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+/* Text overlay for Bedroom */
+.bedroomText {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #ffffff;
+}
+
+.categoriesImg2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Kitchen card styling */
+.kitchen {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.kitchenText {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
+  color: #ffffff;
+}
+
+.cardImg1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive grid wrapper (if needed for second row) */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
