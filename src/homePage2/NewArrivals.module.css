@@ -1,0 +1,109 @@
+.wrapper {
+  /* Ширина секции и фон как в макете */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 160px;
+  background-color: #F9FAFB; /* светло-серый фон за карточками */
+}
+
+.title {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 32px;
+}
+
+.productList {
+  display: flex;
+  gap: 48px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  /* Прячем скроллбар */
+  scrollbar-width: none;
+}
+.productList::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 280px;              /* фиксированная ширина карточки */
+  background-color: #FFFFFF; /* белая карточка */
+  border-radius: 12px;
+  padding: 24px 16px 56px;   /* доп. отступ снизу для кнопки */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* скрываем бейджи NEW и сердце, чтобы не мешались */
+.badges {
+  display: none;
+}
+
+.productImage {
+  width: 100%;
+  height: 240px;             /* по соотношению скрина */
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.addToCart {
+  position: absolute;
+  bottom: 16px;              /* прикрепили внизу карточки */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111827;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.card:hover .addToCart {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.cardContent {
+  text-align: left;
+  margin-top: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.rating img {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+
+.cardContent h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 4px;
+}
+
+.cardContent p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #111827;
+  margin: 0;
+}
