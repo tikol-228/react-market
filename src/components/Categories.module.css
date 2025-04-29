@@ -121,7 +121,7 @@
   color: #000000;
   font-size: 14px;
   transition: color 0.3s ease;
-  margin: 0; /* убираем отступ сверху */
+  margin: 0;
 }
 
 .arrivalLink img {
@@ -138,4 +138,78 @@
 
 .arrivalLink:hover img {
   transform: translateX(4px);
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+
+/* Планшеты (от 992px и ниже) */
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 0 80px;
+    grid-template-columns: 1fr;
+  }
+
+  .livingRoom {
+    height: 500px;
+  }
+}
+
+/* Телефоны (от 768px и ниже) */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 40px;
+  }
+
+  .livingRoom {
+    height: 400px;
+  }
+
+  .bedroom,
+  .kitchen {
+    height: 240px;
+  }
+
+  .categoriesImg1,
+  .categoriesImg2,
+  .cardImg1 {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .livingRoom > div,
+  .bedroomText,
+  .kitchenText {
+    bottom: 16px;
+    left: 16px;
+    gap: 0.3rem;
+  }
+
+  .arrivalLink {
+    font-size: 13px;
+  }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+
+  .livingRoom {
+    height: 320px;
+  }
+
+  .bedroom,
+  .kitchen {
+    height: 200px;
+  }
+
+  .arrivalLink {
+    font-size: 12px;
+  }
+
+  .arrivalLink img {
+    width: 14px;
+    height: 14px;
+  }
 }

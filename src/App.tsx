@@ -8,6 +8,7 @@ import Values from './components/Values'
 import Sale from './components/Sale'
 import Articles from './components/Articles'
 import Categories from './components/Categories'
+import FlyMenu from './components/FlyMenu'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <Header/>
+      <FlyMenu/>
       <SubHeader/>
       <Values/>
       <Categories/>
