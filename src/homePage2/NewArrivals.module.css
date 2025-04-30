@@ -2,8 +2,8 @@
   /* Ширина секции и фон как в макете */
   max-width: 1440px;
   margin: 0 auto;
-  padding: 48px 160px;
-  background-color: #F9FAFB; /* светло-серый фон за карточками */
+  padding: 48px px;
+  background-color: #ffffff; /* светло-серый фон за карточками */
 }
 
 .title {
@@ -34,7 +34,6 @@
   background-color: #FFFFFF; /* белая карточка */
   border-radius: 12px;
   padding: 24px 16px 56px;   /* доп. отступ снизу для кнопки */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   scroll-snap-align: start;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
