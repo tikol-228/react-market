@@ -1,0 +1,72 @@
+.bestSellerSection {
+  padding: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background: #f7f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  margin: 0.5rem 0;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  opacity: 0.3;
+  margin: 0 2px;
+}
+
+.filledStar {
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  margin: 0 2px;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+}

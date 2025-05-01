@@ -6,6 +6,8 @@ import Brands from './Brands'
 import NewArrivals from './NewArrivals'
 import Collection from './Collection'
 import Social from './Social'
+import Email from './Email'
+import Product from './Product'
 
 const HomePage2 = () => {
 
@@ -24,6 +26,8 @@ const HomePage2 = () => {
       <Collection/>
       <Social/>
       <Values/>
+      <Product/>
+      <Email/>
       <Footer/>
     </>
   )
