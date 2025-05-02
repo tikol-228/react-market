@@ -8,6 +8,7 @@ import Collection from './Collection'
 import Social from './Social'
 import Email from './Email'
 import Product from './Product'
+// import Button from '../homePage1/Button'
 
 const HomePage2 = () => {
 
@@ -15,20 +16,24 @@ const HomePage2 = () => {
     window.history.back()
   }
 
+  const handleAddToCard = (item: any) => {
+    console.log('Добавлено в корзину:', item);
+    // сюда можно добавить обновление состояния корзины или передать дальше
+  };
+
   return (
     <>
-
       <button onClick={handleBtnClick}>back</button>
-      <Header2/>
-      <Banner/>
-      <Brands/>
-      <NewArrivals/>
-      <Collection/>
-      <Social/>
-      <Values/>
-      <Product/>
-      <Email/>
-      <Footer/>
+      <Header2 onAddToCart={handleAddToCard} />
+      <Banner />
+      <Brands />
+      <NewArrivals onBuy={handleAddToCard} />
+      <Collection />
+      <Social />
+      <Values />
+      <Product />
+      <Email />
+      <Footer />
     </>
   )
 }

@@ -16,7 +16,7 @@ interface Card {
   prise: string;
 }
 
-const NewArrivals = () => {
+const NewArrivals = ({onBuy}: { onBuy: (item: Card) => void }) => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const cards: Card[] = [
@@ -44,8 +44,11 @@ const NewArrivals = () => {
             </div>
             <img src={card.img} alt={card.title} className={styles.productImage} />
             {hoveredCard === card.id && (
-              <button className={styles.addToCart}>Add to cart</button>
+              <button className={styles.addToCart} onClick={() => onBuy(card)}>
+                Add to cart
+              </button>
             )}
+
             <div className={styles.cardContent}>
               <div className={styles.rating}>
                 {Array(card.rating).fill(0).map((_, i) => (

@@ -1,4 +1,5 @@
-import  Link from './Link';
+import React from 'react';
+import Link from './Link';
 import headerLogo from '../assets/headerLogo.svg';
 import search from '../assets/search.svg';
 import bag from '../assets/bag.svg';
@@ -8,25 +9,30 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import FlyOutCart from './FlyOutCart';
 
-const Header = () => {
+interface Header2Props {
+  onAddToCart: (item: any) => void;
+}
+
+const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
   const navigate = useNavigate();
   const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState<{ id: string; quantity: number }[]>([]);
   const cartRef = useRef<HTMLDivElement>(null);
 
   const handleHomeClick = () => {
     navigate('/HomePage2');
-  }
+  };
 
   const handleCartClick = () => {
-    setCartOpen(prev => !prev);
-  }
+    setCartOpen((prev) => !prev);
+  };
 
   const handleClickOutside = (event: MouseEvent) => {
     if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
       setCartOpen(false);
     }
   };
-  
+
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
@@ -34,29 +40,56 @@ const Header = () => {
     };
   }, []);
 
+  const handleAddToCart = (item: any) => {
+    setCartOpen(true);
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((cartItem) => cartItem.id === item.id);
+      if (existingItem) {
+        return prevItems.map((cartItem) =>
+          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+        );
+      } else {
+        return [...prevItems, { ...item, quantity: 1 }];
+      }
+    });
+    onAddToCart(item);
+  };
+
+  const handleAddItem = () => {
+    const item = { id: 1, name: 'Example Item', price: 100 }; // Пример товара
+    handleAddToCart(item);
+  };
+
   return (
-  <header className={styles.headerContainer}>
-    <div className={styles.headerLogo}>
-      <img src={headerLogo} alt="Logo"/>
-    </div>
-    <nav className={styles.navLinks}>
-      <Link href="#" onClick={handleHomeClick}>Home</Link>
-      <Link href="#">Shop</Link>
-      <Link href="#">Categories</Link>
-      <Link href="#">About</Link>
-      <Link href="#">Contact</Link>
-    </nav>
-    <div className={styles.headerActions}>
-        <img src={search}/>
-        <img src={account}/>
-        <img src={bag} onClick={handleCartClick}/>
+    <header className={styles.headerContainer}>
+      <div className={styles.headerLogo}>
+        <img src={headerLogo} alt="Logo" />
+      </div>
+      <nav className={styles.navLinks}>
+        <Link href="#" onClick={handleHomeClick}>
+          Home
+        </Link>
+        <Link href="#">Shop</Link>
+        <Link href="#">Categories</Link>
+        <Link href="#">About</Link>
+        <Link href="#">Contact</Link>
+      </nav>
+      <div className={styles.headerActions}>
+        <img src={search} />
+        <img src={account} />
+        <img src={bag} onClick={handleCartClick} />
         {cartOpen && (
           <div className={styles.cartContainer} ref={cartRef}>
-            <FlyOutCart onClose={() => setCartOpen(false)} />
+            <FlyOutCart
+              onClose={() => setCartOpen(false)}
+              onBuy={() => handleAddToCart({ id: 'default', quantity: 1 })}
+            />
           </div>
         )}
-    </div>
-  </header>
+      </div>
+      <button onClick={handleAddItem}>Add Example Item to Cart</button>
+    </header>
   );
 };
-export default Header;
+
+export default Header2;
