@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HomePage1 from './homePage1/HomePage1'
 import HomePage2 from './homePage2/HomePage2.tsx'
+import Auth from './pages/Auth.tsx'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <>
       <Router>
         <Routes>
+            <Route path='/auth' element={<Auth/>}/>
             <Route path='/' element={<HomePage1/>}/>
             <Route path='/homePage2' element={<HomePage2/>}/>
         </Routes>

@@ -1,0 +1,152 @@
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 24px;
+
+  --color-text-primary: #141718;
+  --color-text-secondary: #6B7280;
+  --color-accent: #141718;
+
+  --input-height: 48px;
+  --input-border: #E5E7EB;
+  --input-radius: 6px;
+  --input-bg: #FFFFFF;
+  --input-placeholder: #9CA3AF;
+
+  --button-height: 52px;
+  --button-radius: 8px;
+}
+
+/* --- УДАЛЕНО: body background и центрирование --- */
+/* body {
+  background-color: var(--color-bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+} */
+
+/* Контейнер формы + картинки */
+.authForm {
+  width: 100%;               /* Ширина на всю страницу */
+  height: 100vh;             /* Высота — вся высота окна */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Пространство между картинкой и полями */
+  background-color: transparent;  /* Убираем фон карточки */
+  padding: 0;                    /* Убираем внутренние отступы */
+  box-shadow: none;              /* Убираем тень */
+}
+
+/* Мобильная версия: по-прежнему в колонку */
+.authImg {
+  text-align: center;
+}
+.authImg img {
+  width: 100%;
+  height: auto;
+}
+
+/* Обёртка полей и кнопки */
+.authFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;              /* чтобы поля не прилегали к краю экрана */
+  background-color: rgba(255,255,255,0.9); /* полупрозрачный фон под форму */
+}
+
+/* Общий стиль инпутов */
+.nameInput,
+.userInput,
+.emailInput,
+.passInput {
+  height: var(--input-height);
+  padding: 0 16px;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nameInput::placeholder,
+.userInput::placeholder,
+.emailInput::placeholder,
+.passInput::placeholder {
+  color: var(--input-placeholder);
+}
+
+.nameInput:focus,
+.userInput:focus,
+.emailInput:focus,
+.passInput:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* Чекбокс и текст */
+.checkInput {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-accent);
+}
+
+.authFields p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.authFields p a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Кнопка */
+.authBtn {
+  height: var(--button-height);
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.authText {
+    text-align: center;
+    font-family: Poppins, sans-serif;
+}
+
+/* Десктоп: картинка слева, поля справа */
+@media (min-width: 1024px) {
+  .authForm {
+    flex-direction: row;
+    align-items: stretch;      /* чтобы обе колонки тянулись на всю высоту */
+  }
+
+  .authImg {
+    flex: 1 1 50%;
+  }
+  .authImg img {
+    width: 100%;
+    height: 100vh;            /* растягиваем картинку на всю высоту */
+    object-fit: cover;        /* обрезка по необходимости */
+  }
+
+  .authFields {
+    flex: 1 1 50%;
+    padding: 64px;            /* более крупные отступы на широком экране */
+    background-color: rgba(255,255,255,0.9);
+  }
+}

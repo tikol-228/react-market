@@ -8,6 +8,7 @@ import styles from './Header2.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import FlyOutCart from './FlyOutCart';
+import Auth from '../pages/Auth';
 
 interface Header2Props {
   onAddToCart: (item: any) => void;
@@ -26,6 +27,10 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
   const handleCartClick = () => {
     setCartOpen((prev) => !prev);
   };
+
+  const handleContactUsClick = () => {
+    navigate('/ContactUs');
+  }
 
   const handleClickOutside = (event: MouseEvent) => {
     if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
@@ -71,7 +76,7 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
         </Link>
         <Link href="#">Shop</Link>
         <Link href="#">Categories</Link>
-        <Link href="#">About</Link>
+        <Link href="#" onClick={handleContactUsClick}>About</Link>
         <Link href="#">Contact</Link>
       </nav>
       <div className={styles.headerActions}>

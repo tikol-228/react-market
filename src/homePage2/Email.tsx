@@ -8,7 +8,7 @@ const Email = () => {
       <div className={styles.emailContainer}>
         <h2>Join Our Newsletter</h2>
         <p>Sign up for deals, new products and promotions</p>
-        <Input type='email' placeholder='Email address'/>
+        {/* <Input type='email' placeholder='Email address'/> */}
         <Button type='submit' className='btn'>Sing Up</Button>
       </div>
     </>

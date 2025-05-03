@@ -31,7 +31,7 @@ const FlyMenu = () => {
           <img src={cross}/>
         </Button>
 
-        <Input type="text" placeholder="Search" className={styles.searchInput} />
+        {/* <Input type="text" placeholder="Search" className={styles.searchInput} /> */}
 
         <nav className={styles.nav}>
           <Link href="#">Home</Link>

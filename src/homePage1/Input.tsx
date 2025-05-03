@@ -6,10 +6,13 @@ interface InputProps {
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   ref?: React.Ref<HTMLInputElement>;
+  register: any,
+  name: string,
   className?: string;
 }
 
-const Input = ({ type, placeholder, value, onChange, ref,className}:InputProps) => {
+const Input = ({ type, name,register ,placeholder, value, onChange, ref,className}:InputProps) => {
+  console.log(register)
   return (
       <input
         type={type}
@@ -17,6 +20,7 @@ const Input = ({ type, placeholder, value, onChange, ref,className}:InputProps) 
         value={value}
         onChange={onChange}
         ref={ref}
+        // {...register(name)}
         className={className}
       />
   );
