@@ -11,8 +11,8 @@ function App() {
     <>
       <Router>
         <Routes>
-            <Route path='/auth' element={<Auth/>}/>
-            <Route path='/' element={<HomePage1/>}/>
+            <Route path='/' element={<Auth/>}/>
+            <Route path='/HomePage1' element={<HomePage1/>}/>
             <Route path='/homePage2' element={<HomePage2/>}/>
         </Routes>
       </Router>

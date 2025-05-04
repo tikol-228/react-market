@@ -6,7 +6,7 @@ import arrival4 from '../assets/arrival4.svg'
 import arrival5 from '../assets/arrival5.svg'
 import rating from '../assets/rating.svg'
 import styles from '../homePage2/NewArrivals.module.css'
-import heartIcon from '../assets/heart.svg' // добавь иконку сердца в assets
+import heartIcon from '../assets/heart.svg'
 
 interface Card {
   id: number;
