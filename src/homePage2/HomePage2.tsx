@@ -1,3 +1,4 @@
+import React from 'react';
 import Footer from '../homePage1/Footer'
 import Values from '../homePage1/Values'
 import Header2 from './Header2'
@@ -8,26 +9,26 @@ import Collection from './Collection'
 import Social from './Social'
 import Email from './Email'
 import Product from './Product'
-// import Button from '../homePage1/Button'
 
-const HomePage2 = () => {
+interface HomePage2Props {
+  onBuy: (item: any) => void;
+}
 
+const HomePage2: React.FC<HomePage2Props> = ({ onBuy }) => {
   const handleBtnClick = () => {
     window.history.back()
   }
 
-  const handleAddToCard = (item: any) => {
-    console.log('Добавлено в корзину:', item);
-    // сюда можно добавить обновление состояния корзины или передать дальше
-  };
-
+  const handleAddToCart = (item: any) => {
+    console.log('Item added to cart:', item);
+  }
   return (
     <>
       <button onClick={handleBtnClick}>back</button>
-      <Header2 onAddToCart={handleAddToCard} />
+      <Header2 onAddToCart={handleAddToCart} />
       <Banner />
       <Brands />
-      <NewArrivals onBuy={handleAddToCard} />
+      <NewArrivals onBuy={onBuy} />
       <Collection />
       <Social />
       <Values />

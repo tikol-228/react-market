@@ -1,23 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Link from './Link';
 import headerLogo from '../assets/headerLogo.svg';
 import search from '../assets/search.svg';
 import bag from '../assets/bag.svg';
 import account from '../assets/account.svg';
 import styles from './Header2.module.css';
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
 import FlyOutCart from './FlyOutCart';
-import Auth from '../pages/Auth';
 
 interface Header2Props {
-  onAddToCart: (item: any) => void;
+  onAddToCart: (item: { id: string; name: string; price: number; quantity: number }) => void;
 }
 
 const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
   const navigate = useNavigate();
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<{ id: string; quantity: number }[]>([]);
+  const [cartItems, setCartItems] = useState<{ id: string; name: string; price: number; quantity: number }[]>([]);
   const cartRef = useRef<HTMLDivElement>(null);
 
   const handleHomeClick = () => {
@@ -30,7 +28,7 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
 
   const handleContactUsClick = () => {
     navigate('/ContactUs');
-  }
+  };
 
   const handleClickOutside = (event: MouseEvent) => {
     if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
@@ -45,8 +43,7 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
     };
   }, []);
 
-  const handleAddToCart = (item: any) => {
-    setCartOpen(true);
+  const handleAddToCart = (item: { id: string; name: string; price: number; quantity: number }) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
@@ -60,8 +57,8 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
     onAddToCart(item);
   };
 
-  const handleAddItem = () => {
-    const item = { id: 1, name: 'Example Item', price: 100 }; // Пример товара
+  const handleAddExampleItem = () => {
+    const item = { id: '1', name: 'Example Item', price: 100, quantity: 1 }; // Пример товара
     handleAddToCart(item);
   };
 
@@ -76,23 +73,27 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
         </Link>
         <Link href="#">Shop</Link>
         <Link href="#">Categories</Link>
-        <Link href="#" onClick={handleContactUsClick}>About</Link>
+        <Link href="#" onClick={handleContactUsClick}>
+          About
+        </Link>
         <Link href="#">Contact</Link>
       </nav>
       <div className={styles.headerActions}>
-        <img src={search} />
-        <img src={account} />
-        <img src={bag} onClick={handleCartClick} />
+        <img src={search} alt="Search" />
+        <img src={account} alt="Account" />
+        <img src={bag} alt="Cart" onClick={handleCartClick} />
         {cartOpen && (
           <div className={styles.cartContainer} ref={cartRef}>
             <FlyOutCart
               onClose={() => setCartOpen(false)}
-              onBuy={() => handleAddToCart({ id: 'default', quantity: 1 })}
+              onBuy={() => console.log('Checkout initiated')}
+              items={cartItems}
+              setCartItems={setCartItems}
             />
           </div>
         )}
       </div>
-      <button onClick={handleAddItem}>Add Example Item to Cart</button>
+      <button onClick={handleAddExampleItem}>Add Example Item to Cart</button>
     </header>
   );
 };

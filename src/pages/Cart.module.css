@@ -1,0 +1,152 @@
+.cartContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #1E1E1E;
+}
+
+.cartText {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cartGrid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Cart Left Section */
+.cartLeft {
+  flex: 1;
+  min-width: 600px;
+}
+
+.cartHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  font-weight: 500;
+  padding: 16px 0;
+  border-bottom: 1px solid #E8ECEF;
+}
+
+.cartItemRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #E8ECEF;
+}
+
+.productInfo {
+  display: flex;
+  gap: 16px;
+}
+
+.cartFlyImg {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantityControls button {
+  padding: 4px 10px;
+  background-color: #F0F0F0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.quantityControls span {
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Coupon Input */
+.coupon {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coupon input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.coupon button {
+  padding: 12px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Cart Summary */
+.cartSummary {
+  width: 320px;
+  height: 360px;
+  background-color: #f9f9f9;
+  padding: 24px;
+  border: 1px solid #E8ECEF;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cartCrossBtn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: #ffffff;
+}
+
+.cartSummary h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.cartSummary label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+
+.checkoutBtn {
+  margin-top: 16px;
+  padding: 14px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
