@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
-import Input from '../homePage1/Input'
-import Button from '../homePage1/Button'
-import Link from '../homePage1/Link'
-import auth from '../assets/auth.svg'
-import { useNavigate } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
-import styles from './Auth.module.css'
+import React, { useState } from 'react';
+import Input from '../homePage1/Input';
+import Button from '../homePage1/Button';
+import { Link, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import styles from './Auth.module.css';
+import auth from '../assets/auth.svg';
 
 interface FormData {
   name?: string;
@@ -16,23 +15,22 @@ interface FormData {
 }
 
 const Auth = () => {
-  const [isSignIn, setIsSignIn] = useState(true); // Состояние для переключения между входом и регистрацией
-  const navigate = useNavigate()
-  const { register, handleSubmit } = useForm<FormData>()
+  const [isSignIn, setIsSignIn] = useState(true);
+  const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
-    console.log(JSON.stringify(data))
-
+    console.log(JSON.stringify(data));
     if (isSignIn) {
-      navigate('/HomePage1')
+      navigate('/HomePage1');
     } else {
-      
+      // Handle sign-up logic
     }
-  }
+  };
 
   const toggleAuthMode = () => {
-    setIsSignIn(!isSignIn); // Переключение режима
-  }
+    setIsSignIn(!isSignIn);
+  };
 
   return (
     <>
@@ -44,47 +42,52 @@ const Auth = () => {
           <h1 className={styles.authText}>{isSignIn ? 'Sign In' : 'Sign Up'}</h1>
           <p>
             {isSignIn ? 'Don\'t have an account?' : 'Already have an account?'}
-            <Link href="#" onClick={toggleAuthMode}>
+            <a href="#" onClick={(e) => { e.preventDefault(); toggleAuthMode(); }}>
               {isSignIn ? ' Sign Up' : ' Sign In'}
-            </Link>
+            </a>
           </p>
+          {!isSignIn && (
+            <input 
+              {...register('name')}
+              className={styles.nameInput}
+              placeholder="Name"
+            />
+          )}
           <input 
-            {...register('name')}
-            className={styles.nameInput}
-            placeholder="Name"
-            style={{ display: isSignIn ? 'none' : 'block' }}
-          />
-          <input 
-            {...register('username')}
+            {...register('username', { required: 'Username is required' })}
             className={styles.userInput}
             placeholder="Username"
           />
+          {errors.username && <p className={styles.error}>{errors.username.message}</p>}
           <input
-            {...register('email')}
+            {...register('email', { required: 'Email is required' })}
             className={styles.emailInput}
             placeholder="Email"
           />
+          {errors.email && <p className={styles.error}>{errors.email.message}</p>}
           <input
-            {...register('pass')}
+            {...register('pass', { required: 'Password is required' })}
             className={styles.passInput}
             placeholder="Password"
             type="password"
           />
+          {errors.pass && <p className={styles.error}>{errors.pass.message}</p>}
           <input
             {...register('checkbox')}
             className={styles.checkInput}
-            type='checkbox'
+            type="checkbox"
+            value="true"
           />
           <p>
-            I agree with<Link href='#'> Privacy Policy</Link> and<Link href='#'> Terms of Use</Link>
+            I agree with <Link to="#">Privacy Policy</Link> and <Link to="#">Terms of Use</Link>
           </p>
-          <Button type='submit' className={styles.authBtn}>
+          <Button type="submit" className={styles.authBtn}>
             {isSignIn ? 'Sign In' : 'Sign Up'}
           </Button>
         </div>
       </form>
     </>
-  )
-}
+  );
+};
 
-export default Auth
+export default Auth;
