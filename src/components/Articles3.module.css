@@ -1,0 +1,159 @@
+/* Стили для компонента Articles */
+
+.articlesContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 40px 16px;
+  max-width: 1200px;
+}
+
+.articleText {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.articleText h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.articleText p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Карточки статей */
+.articleCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333333;
+  padding: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Стили для ссылки внутри карточки */
+.articlesLink {
+  display: inline-flex;
+  align-items: center;
+  margin: 14px 0 14px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.articlesLink:hover {
+  color: #1558b0;
+}
+
+.articlesLink img {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+/* Убираем дубликат articleLink */
+.articleLink {
+  display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .articlesContainer {
+    padding: 30px 24px;
+  }
+
+  .articleText {
+    margin-bottom: 24px;
+  }
+
+  .articleText h2 {
+    font-size: 1.5rem;
+  }
+
+  .articleText p {
+    font-size: 0.875rem;
+  }
+
+  .articleCard {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .articleText {
+    text-align: center;
+  }
+
+  .articleText h2 {
+    font-size: 1.375rem;
+  }
+
+  .articleText p {
+    font-size: 0.875rem;
+  }
+
+  .articleCard {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .articlesContainer {
+    padding: 20px 16px;
+  }
+
+  .articleText h2 {
+    font-size: 1.25rem;
+  }
+
+  .articleText p {
+    font-size: 0.8125rem;
+  }
+
+  .articlesLink {
+    font-size: 0.8125rem;
+  }
+
+  .articlesLink img {
+    width: 14px;
+    height: 14px;
+  }
+}

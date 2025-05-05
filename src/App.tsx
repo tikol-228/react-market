@@ -6,6 +6,7 @@ import Auth from './pages/Auth';
 import React, { useState } from 'react';
 import FlyOutCart from './homePage2/FlyOutCart';
 import Cart from './pages/Cart';
+import HomePage3 from './pages/HomePage3';
 
 interface Card {
   id: number;
@@ -52,6 +53,7 @@ function App() {
           <Route path="/" element={<Auth />} />
           <Route path="/HomePage1" element={<HomePage1 />} />
           <Route path="/homePage2" element={<HomePage2 onBuy={handleBuy} />} />
+          <Route path='/HomePage3' element={<HomePage3/>}/>
           <Route path="/cart" element={<Cart />} />
         </Routes>
 

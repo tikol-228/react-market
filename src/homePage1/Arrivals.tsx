@@ -8,6 +8,7 @@ import cardImg5 from '../assets/cardImg5.svg';
 import rating from '../assets/rating.svg';
 import styles from './Arrivals.module.css';
 import { useState } from "react";
+import ProductCard from "../components/ProductCard";
 
 // Интерфейс для карточки товара
 interface Card {
@@ -49,27 +50,17 @@ const Arrivals = () => {
 
         <div className={styles.productCard}>
           {cards.map((card) => (
-            <div
+            <ProductCard
               key={card.id}
-              className={styles.card}
-              onMouseEnter={() => handleMouseEnter(card.id)} // Применяем функцию при наведении
-              onMouseLeave={handleMouseLeave} // Применяем функцию при уходе мыши
-            >
-              <img src={card.img} alt={card.title} />
-              <div className={styles.cardContent}>
-                <div className={styles.rating}>
-                  {Array(card.rating).fill(0).map((_, i) => (
-                    <img key={i} src={rating} alt="star" />
-                  ))}
-                </div>
-                <h3>{card.title}</h3>
-                <p>{card.prise}</p>
-              </div>
-              {/* Показываем кнопку, если на карточке наведена мышь */}
-              {hoveredCard === card.id && (
-                <button className={styles.addToCart}>Add to Cart</button>
-              )}
-            </div>
+              id={card.id}
+              img={card.img}
+              rating={card.rating}
+              title={card.title}
+              price={card.prise}
+              isHovered={hoveredCard === card.id}
+              onMouseEnter={setHoveredCard}
+              onMouseLeave={() => setHoveredCard(null)}
+            />
           ))}
         </div>
       </div>
