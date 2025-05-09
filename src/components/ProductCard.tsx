@@ -10,6 +10,7 @@ interface ProductCardProps {
   isHovered: boolean;
   onMouseEnter: (id: number) => void;
   onMouseLeave: () => void;
+  onClick?: () => void;
 }
 
 const ProductCard = ({
@@ -21,12 +22,14 @@ const ProductCard = ({
   isHovered,
   onMouseEnter,
   onMouseLeave,
+  onClick
 }: ProductCardProps) => {
   return (
     <div
       className={styles.card}
       onMouseEnter={() => onMouseEnter(id)}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       <img src={img} alt={title} />
       <div className={styles.cardContent}>

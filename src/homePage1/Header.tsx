@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   const handleContactUsClick = () => {
-    navigate('/ContactUs');
+    navigate('/ContactUs2');
   }
 
   return (

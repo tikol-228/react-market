@@ -8,6 +8,7 @@ import FlyOutCart from './homePage2/FlyOutCart';
 import Cart from './pages/Cart';
 import HomePage3 from './pages/HomePage3';
 import ContactUs2 from './pages/ContactUs2';
+import ProductPage from './pages/ProductPage';
 
 interface Card {
   id: number;
@@ -55,7 +56,8 @@ function App() {
           <Route path="/HomePage1" element={<HomePage1 />} />
           <Route path="/homePage2" element={<HomePage2 onBuy={handleBuy} />} />
           <Route path='/HomePage3' element={<HomePage3/>}/>
-          <Route path='/ContactUs' element={<ContactUs2/>}/> {/* Измените путь здесь */}
+          <Route path='/ContactUs2' element={<ContactUs2/>}/>
+          <Route path="/product-page" element={<ProductPage/>} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
 

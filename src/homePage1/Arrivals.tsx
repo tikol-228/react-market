@@ -5,10 +5,12 @@ import cardImg2 from '../assets/cardImg2.svg';
 import cardImg3 from '../assets/cardImg3.svg';
 import cardImg4 from '../assets/cardImg4.svg';
 import cardImg5 from '../assets/cardImg5.svg';
+import cardImg6 from '../assets/cardImg6.svg';
 import rating from '../assets/rating.svg';
 import styles from './Arrivals.module.css';
 import { useState } from "react";
 import ProductCard from "../components/ProductCard";
+import { useNavigate } from 'react-router-dom';
 
 // Интерфейс для карточки товара
 interface Card {
@@ -27,8 +29,17 @@ const Arrivals = () => {
     { id: 2, img: cardImg2, rating: 5, title: 'Table Lamp', prise: '$24.99' },
     { id: 3, img: cardImg3, rating: 5, title: 'Beige Table Lamp', prise: '$24.99' },
     { id: 4, img: cardImg4, rating: 5, title: 'Bamboo basket', prise: '$24.99' },
-    { id: 5, img: cardImg5, rating: 5, title: 'Toasted', prise: '$224.99' }
+    { id: 5, img: cardImg5, rating: 5, title: 'Toasted', prise: '$224.99' },
+    { id: 6, img: cardImg6, rating: 5, title: 'Tray Table', prise: '$199.00' },
   ];
+
+  const navigate = useNavigate(); // Хук для навигации
+
+  const handleCardClick = (cardId: number) => {
+    if (cardId === 6) {
+      navigate('/product-page'); // Переход на страницу ProductPage
+    }
+  };
 
   // Функция для обработки события при наведении на карточку
   const handleMouseEnter = (cardId: number) => {
@@ -60,6 +71,7 @@ const Arrivals = () => {
               isHovered={hoveredCard === card.id}
               onMouseEnter={setHoveredCard}
               onMouseLeave={() => setHoveredCard(null)}
+              onClick={() => handleCardClick(card.id)} // Передаем ID карточки в обработчик клика
             />
           ))}
         </div>

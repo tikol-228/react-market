@@ -1,0 +1,160 @@
+.container {
+  max-width: 1280px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.labelNew {
+  font-weight: bold;
+  color: green;
+}
+
+.discountBadge {
+  background-color: green;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.description {
+  color: #555;
+}
+
+.priceBlock {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.currentPrice {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.measurementsTitle {
+  font-weight: 500;
+}
+
+.measurementsValue {
+  color: #555;
+}
+
+.colorSelector p {
+  margin-bottom: 0.5rem;
+}
+
+.colors {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.colorCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.selected {
+  border-color: black;
+}
+
+.black { background: black; }
+.grey { background: #ddd; }
+.red { background: #d44; }
+.white { background: white; border: 1px solid #ccc; }
+
+.quantityAndWishlist {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.quantityControl button {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.quantityControl span {
+  padding: 0 1rem;
+}
+
+.wishlist {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.addToCart {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.meta {
+  color: gray;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
