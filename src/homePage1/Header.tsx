@@ -12,6 +12,11 @@ const Header = () => {
   const handleHomeClick = () => {
     navigate('/HomePage2');
   }
+
+  const handleContactUsClick = () => {
+    navigate('/ContactUs');
+  }
+
   return (
   <header className={styles.headerContainer}>
     <div className={styles.headerLogo}>
@@ -22,7 +27,7 @@ const Header = () => {
       <Link href="#">Shop</Link>
       <Link href="#">Categories</Link>
       <Link href="#">About</Link>
-      <Link href="#">Contact</Link>
+      <Link href="#" onClick={handleContactUsClick}>Contact</Link>
     </nav>
     <div className={styles.headerActions}>
         <img src={search}/>
@@ -32,4 +37,5 @@ const Header = () => {
   </header>
   );
 };
+
 export default Header;
