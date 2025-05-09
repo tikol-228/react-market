@@ -6,8 +6,8 @@ interface InputProps {
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   ref?: React.Ref<HTMLInputElement>;
-  register: any,
-  name: string,
+  register?: any,
+  name?: string,
   className?: string;
 }
 
