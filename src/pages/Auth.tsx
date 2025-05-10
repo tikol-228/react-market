@@ -20,6 +20,7 @@ const Auth = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
+    localStorage.setItem('username', data.username)
     console.log(JSON.stringify(data));
     if (isSignIn) {
       navigate('/HomePage1');
