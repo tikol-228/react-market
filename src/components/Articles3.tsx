@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from '../components/Link'
 import styles from './Articles3.module.css'
 import articles1 from '../assets/articles1.svg'

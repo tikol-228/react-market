@@ -1,4 +1,3 @@
-import React from 'react'
 import subHeader3 from '../assets/subHeader3.svg'
 import Link from './Link'
 import arrow1 from '../assets/arrow1.svg'

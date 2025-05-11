@@ -6,7 +6,6 @@ import cardImg3 from '../assets/cardImg3.svg';
 import cardImg4 from '../assets/cardImg4.svg';
 import cardImg5 from '../assets/cardImg5.svg';
 import cardImg6 from '../assets/cardImg6.svg';
-import rating from '../assets/rating.svg';
 import styles from './Arrivals.module.css';
 import { useState } from "react";
 import ProductCard from "../components/ProductCard";
@@ -39,16 +38,6 @@ const Arrivals = () => {
     if (cardId === 6) {
       navigate('/product-page'); // Переход на страницу ProductPage
     }
-  };
-
-  // Функция для обработки события при наведении на карточку
-  const handleMouseEnter = (cardId: number) => {
-    setHoveredCard(cardId); // Устанавливаем ID карточки, на которую наведена мышь
-  };
-
-  // Функция для обработки события при уходе мыши с карточки
-  const handleMouseLeave = () => {
-    setHoveredCard(null); // Очищаем состояние, когда мышь покидает карточку
   };
 
   return (

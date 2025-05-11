@@ -6,7 +6,6 @@ import search from '../assets/search.svg';
 import bag from '../assets/bag.svg';
 import account from '../assets/account.svg';
 import styles from './Header2.module.css';
-import FlyOutCart from './FlyOutCart';
 
 interface Header2Props {
   onAddToCart: (item: { id: string; name: string; price: number; quantity: number }) => void;
@@ -84,12 +83,17 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
         <img src={bag} alt="Cart" onClick={handleCartClick} />
         {cartOpen && (
           <div className={styles.cartContainer} ref={cartRef}>
-            <FlyOutCart
-              onClose={() => setCartOpen(false)}
-              onBuy={() => console.log('Checkout initiated')}
-              items={cartItems}
-              setCartItems={setCartItems}
-            />
+            {cartItems.length === 0 ? (
+              <div>Your cart is empty.</div>
+            ) : (
+              <ul>
+                {cartItems.map((item) => (
+                  <li key={item.id}>
+                    {item.name} x {item.quantity} (${item.price * item.quantity})
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
       </div>

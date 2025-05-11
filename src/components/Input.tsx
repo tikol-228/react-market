@@ -11,7 +11,7 @@ interface InputProps {
   className?: string;
 }
 
-const Input = ({ type, name,register ,placeholder, value, onChange, ref,className}:InputProps) => {
+const Input = ({ type, register ,placeholder, value, onChange, ref,className}:InputProps) => {
   console.log(register)
   return (
       <input

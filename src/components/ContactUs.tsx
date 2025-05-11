@@ -1,5 +1,3 @@
-import React from 'react'
-import Button from '../homePage1/Button'
 import styles from './ContactUs.module.css'
 import subHeader3 from '../assets/subHeader3.svg'
 import Link from './Link'

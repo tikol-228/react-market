@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Articles.module.css'
 import subHeader2 from '../assets/subHeader2.svg'
 import arrivalImg1 from '../assets/arrivalImg1.svg'

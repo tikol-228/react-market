@@ -1,4 +1,3 @@
-import React from 'react'
 import categories from '../assets/categories.svg'
 import categories2 from '../assets/categories2.svg'
 import cardImg5 from '../assets/cardImg5.svg'

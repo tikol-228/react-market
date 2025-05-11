@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage1 from './pages/Furniture';
 import HomePage2 from './pages/Technique';
 import Auth from './pages/Auth';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import FlyOutCart from './components/FlyOutCart';
 import Cart from './pages/Cart';
 import HomePage3 from './pages/Golf';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import arrival1 from '../assets/arrival1.svg'
 import arrival2 from '../assets/arrival2.svg'
 import arrival3 from '../assets/arrival3.svg'

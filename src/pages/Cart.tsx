@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { createContext, useContext } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styles from './Cart.module.css';
@@ -43,10 +41,6 @@ const Cart: React.FC = () => {
   const subtotal = cartItems.reduce((sum: number, item: { price: number; quantity: number; }) => sum + item.price * item.quantity, 0);
   const shippingCost = 0; // Пока только Free Shipping
   const total = subtotal + shippingCost;
-
-  const handleAddItem = (item: CartItem) => {
-
-  }
 
   return (
     <>
