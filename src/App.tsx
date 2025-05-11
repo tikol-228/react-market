@@ -1,13 +1,13 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage1 from './homePage1/HomePage1';
-import HomePage2 from './homePage2/HomePage2';
+import HomePage1 from './pages/Furniture';
+import HomePage2 from './pages/Technique';
 import Auth from './pages/Auth';
 import React, { useState } from 'react';
-import FlyOutCart from './homePage2/FlyOutCart';
+import FlyOutCart from './components/FlyOutCart';
 import Cart from './pages/Cart';
-import HomePage3 from './pages/HomePage3';
-import ContactUs2 from './pages/ContactUs2';
+import HomePage3 from './pages/Golf';
+import ContactUs2 from './pages/ContactUs';
 import ProductPage from './pages/ProductPage';
 
 interface Card {

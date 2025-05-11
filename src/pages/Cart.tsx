@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createContext, useContext } from 'react';
-import Header from '../homePage1/Header';
-import Footer from '../homePage1/Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import styles from './Cart.module.css';
 import cartCross from '../assets/cartCross.svg';
 import { useCart } from '../providers/CartProvider';

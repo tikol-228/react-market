@@ -5,7 +5,7 @@ import arrival3 from '../assets/arrival3.svg'
 import arrival4 from '../assets/arrival4.svg'
 import arrival5 from '../assets/arrival5.svg'
 import rating from '../assets/rating.svg'
-import styles from '../homePage2/NewArrivals.module.css'
+import styles from '../components/NewArrivals.module.css'
 import heartIcon from '../assets/heart.svg'
 
 interface Card {

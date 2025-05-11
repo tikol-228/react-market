@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import styles from './ProductPage.module.css';
-import cardImg6 from '../assets/cardImg6.svg'
-import table1 from '../assets/table1.svg'
-import table2 from '../assets/table2.svg'
-import table3 from '../assets/table3.svg'
-import Input from '../homePage1/Input';
-import Button from '../homePage1/Button';
-import Header from '../homePage1/Header';
-import Footer from '../homePage1/Footer';
-import Email from '../homePage1/Email';
+import cardImg6 from '../assets/cardImg6.svg';
+import table1 from '../assets/table1.svg';
+import table2 from '../assets/table2.svg';
+import table3 from '../assets/table3.svg';
+import Input from '../components/Input';
+import Button from '../components/Button';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Email from '../components/Email';
 
 interface Comment {
   username: string;
@@ -30,7 +30,7 @@ export default function ProductPage() {
 
   return (
     <>
-    <Header/>
+      <Header />
       <section>
         <div className={styles.container}>
           <div className={styles.imageSection}>
@@ -40,9 +40,9 @@ export default function ProductPage() {
               <div className={styles.discountBadge}>-50%</div>
             </div>
             <div className={styles.thumbnails}>
-              <img src={table1} className={styles.thumb} />
-              <img src={table2} className={styles.thumb} />
-              <img src={table3} className={styles.thumb} />
+              <img src={table1} className={styles.thumb} alt="Tray Table 1" />
+              <img src={table2} className={styles.thumb} alt="Tray Table 2" />
+              <img src={table3} className={styles.thumb} alt="Tray Table 3" />
             </div>
           </div>
 
@@ -114,8 +114,8 @@ export default function ProductPage() {
           ))}
         </div>
       </section>
-      <Email/>
-      <Footer/>
+      <Email />
+      <Footer />
     </>
   );
 }

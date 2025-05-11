@@ -1,14 +1,14 @@
 import React from 'react';
-import Footer from '../homePage1/Footer'
-import Values from '../homePage1/Values'
-import Header2 from './Header2'
-import Banner from './Banner'
-import Brands from './Brands'
-import NewArrivals from './NewArrivals'
-import Collection from './Collection'
-import Social from './Social'
-import Email from './Email'
-import Product from './Product'
+import Footer from '../components/Footer'
+import Values from '../components/Values'
+import Header2 from '../components/Header2'
+import Banner from '../components/Banner'
+import Brands from '../components/Brands'
+import NewArrivals from '../components/NewArrivals'
+import Collection from '../components/Collection'
+import Social from '../components/Social'
+import Email from '../components/Email'
+import Product from '../components/Product'
 
 interface HomePage2Props {
   onBuy: (item: any) => void;

@@ -1,4 +1,4 @@
-import styles from '../homePage1/Arrivals.module.css';
+import styles from '../components/Arrivals.module.css';
 import ratingCard from '../assets/ratingCard.svg';
 
 interface ProductCardProps {

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './FlyOutCart.module.css';
 import Link from './Link';
 import { useNavigate } from 'react-router-dom';
-import Button from '../homePage1/Button';
+import Button from '../components/Button';
 
 interface Card {
   id: number;

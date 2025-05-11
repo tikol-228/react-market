@@ -1,18 +1,18 @@
 import React from 'react';
 import Img from '../components/Img'
 import subHeader from '../assets/subHeader3.svg'
-import styles from '../pages/ContactUs2.module.css'
+import styles from '../pages/ContactUs.module.css'
 import market from '../assets/market.svg'
 import phone from '../assets/phone.svg'
 import email from '../assets/email.svg'
 import map from '../assets/map.svg'
-import Values from '../homePage1/Values';
-import Footer from '../homePage1/Footer';
-import Input from '../homePage1/Input';
-import Button from '../homePage1/Button';
+import Values from '../components/Values';
+import Footer from '../components/Footer';
+import Input from '../components/Input';
+import Button from '../components/Button';
 import arrorw1 from '../assets/arrow1.svg'
-import Link from '../homePage1/Link';
-import Header from '../homePage1/Header';
+import Link from '../components/Link';
+import Header from '../components/Header';
 
 const ContactUs2: React.FC = () => {
 

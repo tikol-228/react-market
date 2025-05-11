@@ -4,7 +4,8 @@ import brand3 from '../assets/brand3.svg'
 import brand4 from '../assets/brand4.svg'
 import brand5 from '../assets/brand5.svg'
 import brand6 from '../assets/brand6.svg'
-import styles from '../homePage2/Brands.module.css'
+import styles from '../components/Brands.module.css'
+
 const Brands = () => {
   return (
     <>

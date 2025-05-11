@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Input from '../homePage1/Input';
-import Button from '../homePage1/Button';
+import Input from '../components/Input';
+import Button from '../components/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from './Auth.module.css';
