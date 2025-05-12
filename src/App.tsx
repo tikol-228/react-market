@@ -9,6 +9,8 @@ import Cart from './pages/Cart';
 import HomePage3 from './pages/Golf';
 import ContactUs2 from './pages/ContactUs';
 import ProductPage from './pages/ProductPage';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 interface Card {
   id: number;
@@ -59,6 +61,8 @@ function App() {
           <Route path='/ContactUs2' element={<ContactUs2/>}/>
           <Route path="/product-page" element={<ProductPage/>} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/blog" element={<Blog/>}/>
+          <Route path="blog-post" element={<BlogPost/>}/>
         </Routes>
 
         {isCartOpen && (
