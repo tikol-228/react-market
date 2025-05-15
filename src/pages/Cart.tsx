@@ -3,6 +3,10 @@ import Footer from '../components/Footer';
 import styles from './Cart.module.css';
 import cartCross from '../assets/cartCross.svg';
 import { useCart } from '../providers/CartProvider';
+import Button from '../components/Button';
+import Img from '../components/Img';
+import Title from '../components/Title';
+import Input from '../components/Input';
 
 interface CartItem {
   id: number;
@@ -46,33 +50,33 @@ const Cart: React.FC = () => {
     <>
       <Header />
       <div className={styles.cartContainer}>
-        <h2 className={styles.cartText}>Cart</h2>
+        <Title tipe={2} className={styles.cartText}>Cart</Title>
 
         <div className={styles.cartGrid}>
           {/* Product List */}
           <div className={styles.cartLeft}>
             <div className={styles.cartHeader}>
-              <h5>Product</h5>
-              <h5>Quantity</h5>
-              <h5>Price</h5>
-              <h5>Subtotal</h5>
+              <Title tipe={5}>Product</Title>
+              <Title tipe={5}>Quantity</Title>
+              <Title tipe={5}>Price</Title>
+              <Title>Subtotal</Title>
             </div>
 
             {cartItems.map((item: CartItem) => (
               <div key={item.id} className={styles.cartItemRow}>
                 <div className={styles.productInfo}>
-                  <img src={item.img} className={styles.cartFlyImg} alt={item.title} />
+                  <Img src={item.img} className={styles.cartFlyImg} alt={item.title} />
                   <div>
-                    <h3>{item.title}</h3>
+                    <Title tipe={3}>{item.title}</Title>
                     <p>Color: {item.color}</p>
-                    <button onClick={() => removeItem(item)}
-                    className={styles.cartCrossBtn}><img src={cartCross}/>Remove</button>
+                    <Button onClick={() => removeItem(item)}
+                    className={styles.cartCrossBtn}><img src={cartCross}/>Remove</Button>
                   </div>
                 </div>
                 <div className={styles.quantityControls}>
-                  <button onClick={() => minusItem(item)}>-</button>
+                  <Button onClick={() => minusItem(item)}>-</Button>
                   <span>{item.quantity}</span>
-                  <button onClick={() => plusItem(item)}>+</button>
+                  <Button onClick={() => plusItem(item)}>+</Button>
                 </div>
                 <p>${item.price.toFixed(2)}</p>
                 <p>${(item.price * item.quantity).toFixed(2)}</p>
@@ -81,16 +85,16 @@ const Cart: React.FC = () => {
 
             {/* Coupon Input */}
             <div className={styles.coupon}>
-              <h3>Have a coupon?</h3>
+              <Title tipe={3}>Have a coupon?</Title>
               <p>Add your code for an instant cart discount</p>
-              <input type="text" placeholder="Coupon Code" />
-              <button>Apply</button>
+              <Input type="text" placeholder="Coupon Code" />
+              <Button>Apply</Button>
             </div>
           </div>
 
           {/* Cart Summary */}
           <div className={styles.cartSummary}>
-            <h3>Cart summary</h3>
+            <Title tipe={3}>Cart summary</Title>
             <label><input type="radio" defaultChecked /> Free shipping — $0.00</label>
             <label><input type="radio" /> Express shipping — $15.00</label>
             <label><input type="radio" /> Pick up — $12.00</label>
@@ -102,7 +106,7 @@ const Cart: React.FC = () => {
               <strong>Total</strong>
               <strong>${total.toFixed(2)}</strong>
             </div>
-            <button className={styles.checkoutBtn}>Checkout</button>
+            <Button className={styles.checkoutBtn}>Checkout</Button>
           </div>
         </div>
       </div>

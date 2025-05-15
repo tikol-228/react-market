@@ -11,6 +11,8 @@ import ContactUs2 from './pages/ContactUs';
 import ProductPage from './pages/ProductPage';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Shop from './pages/Shop';
+import ClothesShop from './pages/ClothesShop';
 
 interface Card {
   id: number;
@@ -62,7 +64,9 @@ function App() {
           <Route path="/product-page" element={<ProductPage/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/blog" element={<Blog/>}/>
-          <Route path="blog-post" element={<BlogPost/>}/>
+          <Route path="/blog-post" element={<BlogPost/>}/>
+          <Route path='/clothes-shop' element={<ClothesShop/>}/>
+          <Route path="shop-page" element={<Shop/>}/>
         </Routes>
 
         {isCartOpen && (

@@ -1,0 +1,100 @@
+.footer {
+  background-color: #F3F4F6;
+  color: #1F2937;
+}
+.topSection {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 160px 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 49px;
+}
+.companyInfo {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.address {
+  font-style: normal;
+}
+.socialIcons {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.linksColumn h3 {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.linksColumn ul {
+  list-style: none;
+  padding: 0;
+}
+.linksColumn li {
+  margin-bottom: 8px;
+}
+.linksColumn a {
+  text-decoration: none;
+  color: inherit;
+}
+.linksColumn a:hover {
+  text-decoration: underline;
+}
+.newsletter h3 {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.newsletter p {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.newsletter form {
+  display: flex;
+}
+.newsletter input {
+  flex-grow: 1;
+  padding: 12px 16px;
+  border: 1px solid #D1D5DB;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+.newsletter button {
+  padding: 12px 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 0 8px 8px 0;
+  background-color: #3B82F6;
+  color: white;
+  cursor: pointer;
+}
+.bottomBar {
+  border-top: 1px solid #D1D5DB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 160px;
+  font-size: 12px;
+}
+.policyLinks {
+  display: flex;
+  gap: 16px;
+}
+.policyLinks a {
+  text-decoration: none;
+  color: inherit;
+}
+.policyLinks a:hover {
+  text-decoration: underline;
+}
+.paymentIcons {
+  display: flex;
+  gap: 12px;
+}
+.paymentIcons img {
+  height: 24px;
+}

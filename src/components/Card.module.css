@@ -1,0 +1,87 @@
+.productCard {
+  background: #f3f5f7;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+  width: 240px;
+  font-family: sans-serif;
+  transition: box-shadow 0.2s ease;
+}
+
+.productCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.badgeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badgeNew {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.badgeSale {
+  background-color: #3ccf7f;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.wishlistButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.addToCart {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.productInfo {
+  margin-top: 12px;
+}
+
+.stars {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.productName {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 14px;
+  color: #555;
+}
