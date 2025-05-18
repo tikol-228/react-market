@@ -10,6 +10,8 @@ import Blog from "../pages/Blog";
 import BlogPost from "../pages/BlogPost";
 import Account from "../pages/Account";
 import Cart from "../pages/Cart";
+import ProtectedRoutes from "./ProtectedRoutes";
+import Auth from "../pages/Auth";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +28,13 @@ const router = createBrowserRouter([
         {path:'blog-post', element:<BlogPost/>},
         {path:'cart', element:<Cart/>},
         {path:'tech', element:<Technique/>},
-        {path:'my-account', element:<Account/>}
+        {
+            path:'',
+            element:<ProtectedRoutes/>,
+            children:[
+                {path:'my-account', element:<Account/>}
+            ]
+        }
      ]
     },
 ])

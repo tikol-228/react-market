@@ -58,11 +58,11 @@ function App() {
 
     <RouterProvider router={router}/>
 
-      {/* <Router>
+      <Router>
         <Routes>
           <Route path="/" element={<Auth />} />
           <Route path="/HomePage1" element={<HomePage1 />} />
-          <Route path="/homePage2" element={<HomePage2 onBuy={handleBuy} />} />
+          <Route path="/homePage2" element={<HomePage2/>} />
           <Route path='/HomePage3' element={<HomePage3/>}/>
           <Route path='/ContactUs2' element={<ContactUs2/>}/>
           <Route path="/product-page" element={<ProductPage/>} />
@@ -81,7 +81,7 @@ function App() {
             setCartItems={setCartItems}
           />
         )}
-      </Router> */}
+      </Router>
 
     </>
   );
