@@ -50,15 +50,15 @@ const Cart: React.FC = () => {
     <>
       <Header />
       <div className={styles.cartContainer}>
-        <Title tipe={2} className={styles.cartText}>Cart</Title>
+        <Title type={2} className={styles.cartText}>Cart</Title>
 
         <div className={styles.cartGrid}>
           {/* Product List */}
           <div className={styles.cartLeft}>
             <div className={styles.cartHeader}>
-              <Title tipe={5}>Product</Title>
-              <Title tipe={5}>Quantity</Title>
-              <Title tipe={5}>Price</Title>
+              <Title type={5}>Product</Title>
+              <Title type={5}>Quantity</Title>
+              <Title type={5}>Price</Title>
               <Title>Subtotal</Title>
             </div>
 
@@ -67,7 +67,7 @@ const Cart: React.FC = () => {
                 <div className={styles.productInfo}>
                   <Img src={item.img} className={styles.cartFlyImg} alt={item.title} />
                   <div>
-                    <Title tipe={3}>{item.title}</Title>
+                    <Title type={3}>{item.title}</Title>
                     <p>Color: {item.color}</p>
                     <Button onClick={() => removeItem(item)}
                     className={styles.cartCrossBtn}><img src={cartCross}/>Remove</Button>
@@ -85,7 +85,7 @@ const Cart: React.FC = () => {
 
             {/* Coupon Input */}
             <div className={styles.coupon}>
-              <Title tipe={3}>Have a coupon?</Title>
+              <Title type={3}>Have a coupon?</Title>
               <p>Add your code for an instant cart discount</p>
               <Input type="text" placeholder="Coupon Code" />
               <Button>Apply</Button>
@@ -94,7 +94,7 @@ const Cart: React.FC = () => {
 
           {/* Cart Summary */}
           <div className={styles.cartSummary}>
-            <Title tipe={3}>Cart summary</Title>
+            <Title type={3}>Cart summary</Title>
             <label><input type="radio" defaultChecked /> Free shipping — $0.00</label>
             <label><input type="radio" /> Express shipping — $15.00</label>
             <label><input type="radio" /> Pick up — $12.00</label>

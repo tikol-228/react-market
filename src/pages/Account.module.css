@@ -1,0 +1,182 @@
+/* Account.module.css */
+
+.myAccText {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a202c;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.accountForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.accountInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.accountInput p {
+  font-size: 0.875rem;
+  color: #4a5568;
+  margin-top: 0.5rem;
+}
+
+.passwordContainer {
+  margin-top: 2rem;
+}
+
+.passwordContainer h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.buttonSave {
+  align-self: flex-start;
+  background-color: #1a202c;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1.5rem;
+}
+
+.buttonSave:hover {
+  background-color: #5a67d8;
+}
+
+/* Account.module.css */
+
+/* Стили для самого <input> внутри .accountInput */
+.accountInput input {
+  /* Отступы и типографика */
+  width: 100%;                   /* Растягиваем на всю ширину контейнера */ 
+  padding: 0.75rem 1rem;         /* Пространство внутри поля */ 
+  font-size: 1rem;               /* Базовый размер шрифта */ 
+  font-family: inherit;          /* Наследуем шрифт родителя */ 
+
+  /* Оформление границы и фона */
+  border: 1px solid #e2e8f0;     /* Светло-серая граница */ 
+  border-radius: 8px;            /* Скруглённые углы */ 
+  background-color: #fff;        /* Белый фон */ 
+
+  /* Плавный переход при наведении/фокусе */
+  transition: border-color 0.2s, box-shadow 0.2s;  /* Без JavaScript, чистый CSS :contentReference[oaicite:0]{index=0} */
+
+  /* Доступность */
+  color: #1a202c;                /* Тёмный текст для контраста */ 
+}
+
+/* Плейсхолдер */
+.accountInput input::placeholder {
+  color: #a0aec0;                /* Нежно-серый цвет */ 
+  opacity: 1;                    /* Чтобы цвет отображался точно */ 
+}
+
+/* Состояние фокуса */
+.accountInput input:focus {
+  border-color: #667eea;         /* Основной акцентный цвет */ 
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2); /* Лёгкая тень вокруг :contentReference[oaicite:1]{index=1} */
+  outline: none;                 /* Убираем дефолтное обрамление */
+}
+
+.fileInput {
+  display: none;
+}
+
+.accountImg {
+  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+}
+
+.container {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 160px;
+  background-color: #fff;
+}
+
+.sidebar {
+  width: 280px;
+  margin-right: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.accountImg {
+  border-radius: 100px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.placeholderAvatar {
+  width: 120px;
+  height: 120px;
+  background-color: #e2e8f0;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 24px;
+  color: #1a202c;
+}
+
+.uploadButton {
+  margin-bottom: 32px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menu li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 500;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.menu li:first-child {
+  color: #1a202c;
+  font-weight: 600;
+  border-left: 3px solid #1a202c;
+  padding-left: 12px;
+}
+
+.main {
+  flex: 1;
+}

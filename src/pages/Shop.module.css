@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   height: 392px;
-  overflow: hidden;
 }
 
 .image {
@@ -35,4 +34,71 @@
 .subtitle {
   font-size: 18px;
   color: #444;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 32px;
+}
+
+.cardGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.shopCategories {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.shopCategories h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a1a1a;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.filterBlock {
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.shopCategories p,
+.shopCategories a {
+  font-size: 14px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.shopCategories a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.shopCategories input[type="checkbox"] {
+  accent-color: #333;
+  cursor: pointer;
+}
+
+.shopCategories p:hover {
+  color: #000;
 }

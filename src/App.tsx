@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, RouterProvider } from 'react-router-dom';
 import HomePage1 from './pages/Furniture';
 import HomePage2 from './pages/Technique';
 import Auth from './pages/Auth';
@@ -13,6 +13,7 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Shop from './pages/Shop';
 import ClothesShop from './pages/ClothesShop';
+import router from './providers/router';
 
 interface Card {
   id: number;
@@ -54,7 +55,10 @@ function App() {
 
   return (
     <>
-      <Router>
+
+    <RouterProvider router={router}/>
+
+      {/* <Router>
         <Routes>
           <Route path="/" element={<Auth />} />
           <Route path="/HomePage1" element={<HomePage1 />} />
@@ -77,7 +81,7 @@ function App() {
             setCartItems={setCartItems}
           />
         )}
-      </Router>
+      </Router> */}
 
     </>
   );

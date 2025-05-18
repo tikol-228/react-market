@@ -10,7 +10,6 @@ import styles from './BlogPost.module.css'
 const BlogPost = () => {
   return (
     <>
-      <Header />
     <section>
       <section className={styles.heroSection}>
         <div className={styles.heroContainer}>
@@ -72,7 +71,6 @@ const BlogPost = () => {
         </div>
       </section>
     </section>
-      <Footer />
     </>
   )
 }

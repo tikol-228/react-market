@@ -29,7 +29,6 @@ const Blog = () => {
 
   return (
     <>
-        <Header/>
         <section>
             <section className={styles.heroSection}>
                 <div className={styles.heroOverlay}>
@@ -49,7 +48,6 @@ const Blog = () => {
             </section>
         </section>
         <Email/>
-        <Footer/>
     </>
   )
 }

@@ -24,7 +24,6 @@ const ContactUs2: React.FC = () => {
 
     return (
         <>
-        <Header/>
         <section className={styles.contactUsContainer}>
             <div className={styles.contentWrapper}>
                 <div className={styles.header}>
@@ -85,7 +84,6 @@ const ContactUs2: React.FC = () => {
 
             <Values/>
         </section>
-        <Footer/>
         </>
     );
 };

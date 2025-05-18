@@ -30,7 +30,6 @@ export default function ProductPage() {
 
   return (
     <>
-      <Header />
       <section>
         <div className={styles.container}>
           <div className={styles.imageSection}>
@@ -115,7 +114,6 @@ export default function ProductPage() {
         </div>
       </section>
       <Email />
-      <Footer />
     </>
   );
 }

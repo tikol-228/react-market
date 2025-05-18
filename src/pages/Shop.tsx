@@ -125,52 +125,52 @@ const Shop = () => {
 
   return (
     <>
-      <Header />
       <section className={styles.banner}>
-        <Img
-          className={styles.image}
-          src={shop}
-          alt="Shop Banner"
-        />
+        <Img className={styles.image} src={shop} alt="Shop Banner" />
         <div className={styles.overlay}>
           <div className={styles.breadcrumb}>Home &gt; Shop</div>
           <h1 className={styles.title}>Shop Page</h1>
           <p className={styles.subtitle}>Let’s design the place you always imagined.</p>
         </div>
+      </section>
+
+      <div className={styles.content}>
         <div className={styles.shopCategories}>
-          <div>
+          <div className={styles.filterBlock}>
             <h3><img src={filter} alt="Filter" /> Filter</h3>
           </div>
-          <div>
+          <div className={styles.filterBlock}>
             <h3>CATEGORIES</h3>
             {categories.map((category, index) => (
               <Link key={index} href="#">{category}</Link>
             ))}
           </div>
-          <div>
+          <div className={styles.filterBlock}>
             <h3>PRICE</h3>
             {priceRanges.map((range, index) => (
               <p key={index}>
-                {range}<input type="checkbox" />
+                {range}
+                <input type="checkbox" />
               </p>
             ))}
           </div>
         </div>
-      </section>
-      <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            name={card.name}
-            price={card.price}
-            imageSrc={card.imageSrc}
-            isNew={card.isNew}
-            discountPercent={card.discountPercent}
-          />
-        ))}
+
+        <div className={styles.cardGrid}>
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              name={card.name}
+              price={card.price}
+              imageSrc={card.imageSrc}
+              isNew={card.isNew}
+              discountPercent={card.discountPercent}
+            />
+          ))}
+        </div>
       </div>
+
       <Email />
-      <Footer />
     </>
   );
 };

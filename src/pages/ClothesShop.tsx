@@ -12,7 +12,6 @@ import ClothesSell from "../components/ClothesSell"
 const ClothesShop = () => {
   return (
     <>
-        <Header/>
         <Banner2/>
         <CategorieShop/>
         <Brands/>
@@ -20,7 +19,6 @@ const ClothesShop = () => {
         <Articles2/>
         <Social2/>
         <Values/>
-        <ClothesFooter/>
     </>
   )
 }

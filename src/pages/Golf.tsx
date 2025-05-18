@@ -6,10 +6,8 @@ import Featured from "../components/Featured" // Adjust the path if necessary
 const HomePage3 = () => {
   return (
     <>
-        <Header/>
         <Featured/>
         <Articles3/>
-        <Footer/>
     </>
   )
 }

@@ -10,11 +10,7 @@ import Social from '../components/Social'
 import Email from '../components/Email'
 import Product from '../components/Product'
 
-interface HomePage2Props {
-  onBuy: (item: any) => void;
-}
-
-const HomePage2: React.FC<HomePage2Props> = ({ onBuy }) => {
+const Technique = () => {
   const handleBtnClick = () => {
     window.history.back()
   }
@@ -28,7 +24,7 @@ const HomePage2: React.FC<HomePage2Props> = ({ onBuy }) => {
       <Header2 onAddToCart={handleAddToCart} />
       <Banner />
       <Brands />
-      <NewArrivals onBuy={onBuy} />
+      {/* <NewArrivals onBuy={onBuy} /> */}
       <Collection />
       <Social />
       <Values />
@@ -39,4 +35,4 @@ const HomePage2: React.FC<HomePage2Props> = ({ onBuy }) => {
   )
 }
 
-export default HomePage2
+export default Technique
