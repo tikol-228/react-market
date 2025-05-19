@@ -11,7 +11,6 @@ import BlogPost from "../pages/BlogPost";
 import Account from "../pages/Account";
 import Cart from "../pages/Cart";
 import ProtectedRoutes from "./ProtectedRoutes";
-import Auth from "../pages/Auth";
 
 const router = createBrowserRouter([
     {
