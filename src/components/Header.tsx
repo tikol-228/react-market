@@ -1,25 +1,15 @@
-import Link from './Link';
+import { Link, useLocation } from 'react-router-dom';
 import headerLogo from '../assets/headerLogo.svg';
 import search from '../assets/search.svg';
 import bag from '../assets/bag.svg';
 import account from '../assets/account.svg';
 import styles from './Header.module.css';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   let headerContainerStyles: React.CSSProperties = {};
 
-  const handleHomeClick = () => {
-    navigate('/HomePage2');
-  };
-
-  const handleContactUsClick = () => {
-    navigate('/ContactUs2');
-  };
-
-  // Исправлено: путь должен начинаться с /
+  // Изменение цвета фона в зависимости от текущего пути
   if (location.pathname === '/tecnique') {
     headerContainerStyles.backgroundColor = 'yellow';
   }
@@ -30,16 +20,22 @@ const Header = () => {
         <img src={headerLogo} alt="Logo" />
       </div>
       <nav className={styles.navLinks}>
-        <Link href="#" onClick={handleHomeClick}>Home</Link>
-        <Link href="#">Shop</Link>
-        <Link href="#">Categories</Link>
-        <Link href="#">About</Link>
-        <Link href="#" onClick={handleContactUsClick}>Contact</Link>
+        <Link to="/">Home</Link>
+        <Link to="/shop-page">Shop</Link>
+        <Link to="/categories">Categories</Link>
+        <Link to="/about-us">About</Link>
+        <Link to="/contact-us">Contact</Link>
       </nav>
       <div className={styles.headerActions}>
-        <img src={search} alt="Search" />
-        <img src={account} alt="Account" />
-        <img src={bag} alt="Bag" />
+        <Link to="/search">
+          <img src={search} alt="Search" />
+        </Link>
+        <Link to="/my-account">
+          <img src={account} alt="Account" />
+        </Link>
+        <Link to="/cart">
+          <img src={bag} alt="Bag" />
+        </Link>
       </div>
     </header>
   );

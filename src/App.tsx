@@ -1,5 +1,5 @@
 import './App.css';
-import { RouterProvider } from 'react-router-dom';
+import { Router, RouterProvider } from 'react-router-dom';
 import { useState } from 'react';
 import FlyOutCart from './components/FlyOutCart';
 import router from './providers/router';
