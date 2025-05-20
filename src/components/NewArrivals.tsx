@@ -27,6 +27,7 @@ const NewArrivals = ({onBuy}: { onBuy: (item: Card) => void }) => {
     { id: 5, img: arrival5, rating: 5, title: 'Beats Studio Pro', prise: '$224.99' }
   ];
 
+
   return (
     <section className={styles.wrapper}>
       <h2 className={styles.title}>New Arrivals</h2>

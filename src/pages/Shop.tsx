@@ -15,7 +15,8 @@ import shop from '../assets/shop.svg';
 import styles from './Shop.module.css';
 import filter from '../assets/filter.svg';
 import Img from "../components/Img";
-import Link from "../components/Link";
+//import Link from "../components/Link";
+import { Link } from 'react-router-dom'
 
 const Shop = () => {
   const cards = [
@@ -158,6 +159,7 @@ const Shop = () => {
 
         <div className={styles.cardGrid}>
           {cards.map((card) => (
+          <Link key={card.id} to={card.name === "Black Tray table" ? "/product-page" : "#"}>
             <Card
               key={card.id}
               name={card.name}
@@ -166,6 +168,7 @@ const Shop = () => {
               isNew={card.isNew}
               discountPercent={card.discountPercent}
             />
+          </Link>
           ))}
         </div>
       </div>
