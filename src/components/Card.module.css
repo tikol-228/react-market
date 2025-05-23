@@ -66,6 +66,19 @@
   cursor: pointer;
 }
 
+.wishlistButton,
+.addToCart {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.productCard:hover .wishlistButton,
+.productCard:hover .addToCart {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .productInfo {
   margin-top: 12px;
 }

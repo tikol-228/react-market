@@ -12,6 +12,7 @@ import Account from "../pages/Account";
 import Cart from "../pages/Cart";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Auth from "../pages/Auth";
+import CheckOut from "../pages/CheckOut";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
         {path:'blog-post', element:<BlogPost/>},
         {path:'cart', element:<Cart/>},
         {path:'tech', element:<Technique/>},
+        {path:'check-out',element:<CheckOut/>},
         {path:'auth', element:<Auth/>},
         {
             path:'',

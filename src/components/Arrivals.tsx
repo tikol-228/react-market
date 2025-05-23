@@ -1,4 +1,4 @@
-import Link from "./Link";
+// import Link from "./Link";
 import arrow1 from '../assets/arrow1.svg';
 import cardImg1 from '../assets/cardImg1.svg';
 import cardImg2 from '../assets/cardImg2.svg';
@@ -9,7 +9,8 @@ import cardImg6 from '../assets/cardImg6.svg';
 import styles from './Arrivals.module.css';
 import { useState } from "react";
 import ProductCard from "../components/ProductCard";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 // Интерфейс для карточки товара
 interface Card {
@@ -50,18 +51,20 @@ const Arrivals = () => {
 
         <div className={styles.productCard}>
           {cards.map((card) => (
-            <ProductCard
-              key={card.id}
-              id={card.id}
-              img={card.img}
-              rating={card.rating}
-              title={card.title}
-              price={card.prise}
-              isHovered={hoveredCard === card.id}
-              onMouseEnter={setHoveredCard}
-              onMouseLeave={() => setHoveredCard(null)}
-              onClick={() => handleCardClick(card.id)} // Передаем ID карточки в обработчик клика
-            />
+            <Link key={card.id} to={card.title === "Loveseat Sofa" ? "/product-page" : "#"}>
+              <ProductCard
+                key={card.id}
+                id={card.id}
+                img={card.img}
+                rating={card.rating}
+                title={card.title}
+                price={card.prise}
+                isHovered={hoveredCard === card.id}
+                onMouseEnter={setHoveredCard}
+                onMouseLeave={() => setHoveredCard(null)}
+                onClick={() => handleCardClick(card.id)} // Передаем ID карточки в обработчик клика
+              />
+            </Link>
           ))}
         </div>
       </div>

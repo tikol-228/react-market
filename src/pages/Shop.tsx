@@ -17,6 +17,7 @@ import filter from '../assets/filter.svg';
 import Img from "../components/Img";
 //import Link from "../components/Link";
 import { Link } from 'react-router-dom'
+import { useState } from "react";
 
 const Shop = () => {
   const cards = [
@@ -124,6 +125,18 @@ const Shop = () => {
     "$400.00+"
   ];
 
+  const [selectedPrice, setSelectedPrice] = useState<string | undefined>();
+
+  const getFilteredCards = () => {
+    if (selectedPrice === "All Price") return cards;
+    if (selectedPrice === "$0.00 - 99.99") return cards.filter(card => card.price >= 0 && card.price < 100);
+    if (selectedPrice === "$100.00 - 199.99") return cards.filter(card => card.price >= 100 && card.price < 200);
+    if (selectedPrice === "$200.00 - 299.99") return cards.filter(card => card.price >= 200 && card.price < 300);
+    if (selectedPrice === "$300.00 - 399.99") return cards.filter(card => card.price >= 300 && card.price < 400);
+    if (selectedPrice === "$400.00+") return cards.filter(card => card.price >= 400);
+    return cards;
+  };
+
   return (
     <>
       <section className={styles.banner}>
@@ -150,25 +163,33 @@ const Shop = () => {
             <h3>PRICE</h3>
             {priceRanges.map((range, index) => (
               <p key={index}>
-                {range}
-                <input type="checkbox" />
+                <label>
+                  <input
+                    type="radio"
+                    name="price"
+                    value={range}
+                    checked={selectedPrice === range}
+                    onChange={() => setSelectedPrice(range)}
+                  />
+                  {range}
+                </label>
               </p>
             ))}
           </div>
         </div>
 
         <div className={styles.cardGrid}>
-          {cards.map((card) => (
-          <Link key={card.id} to={card.name === "Black Tray table" ? "/product-page" : "#"}>
-            <Card
-              key={card.id}
-              name={card.name}
-              price={card.price}
-              imageSrc={card.imageSrc}
-              isNew={card.isNew}
-              discountPercent={card.discountPercent}
-            />
-          </Link>
+          {getFilteredCards().map((card) => (
+            <Link key={card.id} to={card.name === "Black Tray table" ? "/product-page" : "#"}>
+              <Card
+                key={card.id}
+                name={card.name}
+                price={card.price}
+                imageSrc={card.imageSrc}
+                isNew={card.isNew}
+                discountPercent={card.discountPercent}
+              />
+            </Link>
           ))}
         </div>
       </div>

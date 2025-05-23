@@ -1,8 +1,7 @@
-/* Email.module.css */
 .emailContainer {
   width: 100%;
-  background-image: url('/src/assets/img.svg');
   padding: 3rem 1.5rem;
+  background-image: url('/src/assets/img.svg');
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,65 +23,71 @@
   margin: 0;
 }
 
-/* Target the Input component's native input element */
-.emailContainer input {
+.form {
   width: 100%;
-  max-width: 400px;
-  padding: 0.75rem 1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.875rem;
-  border: 1px solid #3c3c3c;
-  border-radius: 4px;
-  background-color: none;
-  color: #ffffff;
-  outline: none;
-  transition: border-color 0.2s ease-in-out;
+  max-width: 488px;
 }
 
-.emailContainer input::placeholder {
+.inputGroup {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #3c3c3c;
+  padding: 0.5rem 0;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #141718;
+  padding: 0.5rem 0;
+}
+
+.input::placeholder {
   color: #777777;
 }
 
-.emailContainer input:focus {
-  border-color: #888888;
-}
-
-/* Button styled via its .btn class within the container */
-.emailContainer .btn {
-  padding: 0.75rem 1.5rem;
+.button {
+  background: transparent;
+  border: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
+  color: #777777;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background-color: #e07a5f;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease-in-out;
 }
 
-.emailContainer .btn:hover {
-  background-color: #d96b52;
+.button:hover {
+  color: #d96b52;
 }
 
 @media (max-width: 600px) {
-  .emailContainer {
-    padding: 2rem 1rem;
-    gap: 0.75rem;
-  }
-
-  .emailContainer h2 {
-    font-size: 1.5rem;
-  }
-
-  .emailContainer p {
-    font-size: 0.875rem;
-  }
-
-  .emailContainer input,
-  .emailContainer .btn {
-    width: 100%;
+  .form {
     max-width: none;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: none;
+    gap: 0.5rem;
+  }
+
+  .button {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #3c3c3c;
   }
 }

@@ -48,7 +48,6 @@ const Cart: React.FC = () => {
 
   return (
     <>
-      <Header />
       <div className={styles.cartContainer}>
         <Title type={2} className={styles.cartText}>Cart</Title>
 
@@ -110,7 +109,6 @@ const Cart: React.FC = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

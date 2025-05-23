@@ -60,6 +60,29 @@
   opacity: 0.7;
 }
 
+.iconButton {
+  border: none;
+  background-color: #ffffff;
+}
+
+.search {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.headerActions input {
+  width: 150px;
+  opacity: 1;
+  padding: 6px 10px;
+}
+
+
 @media (max-width: 768px) {
   .navLinks {
     display: none;
