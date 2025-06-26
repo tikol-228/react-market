@@ -1,0 +1,183 @@
+/* Общий контейнер */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0 160px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Главный блок с большой карточкой */
+.mainBlock {
+  position: relative;
+  width: 100%;
+  height: 575px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background-color: #F3F5F7;
+}
+
+/* Картинка в главном блоке */
+.imageMain {
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Текст в главном блоке */
+.textBlock {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  text-align: left;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Боковая секция с двумя карточками */
+.sideSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Каждая карточка */
+.card {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #F3F5F7;
+}
+
+/* Текст в карточке */
+.cardText {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  text-align: left;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Картинки в карточках */
+.imageSecondary {
+  width: auto;
+  height: auto;
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Стили для ссылки "Shop Now" */
+.shopButton {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.shopButton img {
+  margin-left: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Анимация при наведении на ссылку */
+.shopButton:hover {
+  color: #555555;
+}
+
+.shopButton:hover img {
+  transform: translateX(4px);
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+
+/* Планшеты (от 992px и ниже) */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 80px;
+    grid-template-columns: 1fr;
+  }
+
+  .mainBlock {
+    height: 500px;
+  }
+}
+
+/* Телефоны (от 768px и ниже) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .mainBlock {
+    height: 400px;
+  }
+
+  .card {
+    height: 240px;
+  }
+
+  .imageMain,
+  .imageSecondary {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .textBlock,
+  .cardText {
+    bottom: 16px;
+    left: 16px;
+    gap: 0.3rem;
+  }
+
+  .shopButton {
+    font-size: 13px;
+  }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .mainBlock {
+    height: 320px;
+  }
+
+  .card {
+    height: 200px;
+  }
+
+  .shopButton {
+    font-size: 12px;
+  }
+
+  .shopButton img {
+    width: 14px;
+    height: 14px;
+  }
+}

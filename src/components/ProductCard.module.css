@@ -1,0 +1,94 @@
+/* Общая обертка для текста заголовка и ссылки */
+.arrivalText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Заголовок секции */
+.arrivalText h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Ссылка "More Products" */
+.arrivalLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #555;
+  text-decoration: none;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.arrivalLink:hover {
+  color: #000;
+}
+
+/* Сетка карточек */
+.productCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Обертка отдельной карточки */
+.card {
+  position: relative;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Контент карточки: звезды, заголовок, цена */
+.cardContent {
+  margin-top: 0.75rem;
+}
+
+.cardContent h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0 0.25rem;
+  color: #333;
+}
+
+.cardContent p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Рейтинг (звезды) */
+.rating {
+  display: flex;
+  gap: 0.2rem;
+}
+
+/* Кнопка "Add to Cart" */
+.addToCart {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  opacity: 0.95;
+  transition: background-color 0.2s ease;
+}
+
+.addToCart:hover {
+  background-color: #333;
+}

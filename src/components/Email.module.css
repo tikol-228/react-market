@@ -1,0 +1,98 @@
+.emailContainer {
+  width: 100%;
+  padding: 40px 80px;
+  background-image: url('/src/assets/img.svg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.emailContainer h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75rem;
+  color: #141718;
+  margin: 0;
+}
+
+.emailContainer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #141718;
+  margin: 0;
+}
+
+.form {
+  width: 100%;
+  max-width: 488px;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #3c3c3c;
+  padding: 0.5rem 0;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #141718;
+  padding: 0.5rem 0;
+}
+
+.input::placeholder {
+  color: #777777;
+}
+
+.button {
+  background: transparent;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #777777;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.button:hover {
+  color: #d96b52;
+}
+
+@media (max-width: 600px) {
+  .emailContainer {
+    padding: 16px;
+    font-size: 0.95em;
+  }
+
+  .form {
+    max-width: none;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: none;
+    gap: 0.5rem;
+  }
+
+  .button {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #3c3c3c;
+  }
+}
