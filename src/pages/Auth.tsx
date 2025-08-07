@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Button from '../components/Button';
+import AuthBtnGoogle from "../components/AuthBtnGoogle";
 import AuthToast from '../components/AuthToast';
 import auth from '../assets/auth.svg';
 
@@ -185,6 +186,7 @@ const Auth = () => {
           <Button type="submit" className="h-12 bg-black text-white text-base font-semibold rounded-md hover:bg-black/80 transition">
             {isSignIn ? 'Sign In' : 'Sign Up'}
           </Button>
+          <AuthBtnGoogle/>
         </div>
       </form>
 

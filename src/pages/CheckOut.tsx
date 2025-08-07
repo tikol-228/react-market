@@ -1,18 +1,17 @@
 import React from "react";
 import styles from "./CheckOut.module.css";
-import { useCart } from "../providers/CartProvider";
 
 const CheckOut: React.FC = () => {
-  const { cartItems } = useCart();
 
-  const subtotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
-  const shippingCost = 0;
-  const total = subtotal + shippingCost;
+  // const subtotal = cartItems.reduce(
+  //   (sum, item) => sum + item.price * item.quantity,
+  //   0
+  // );
+  // const shippingCost = 0;
+  // const total = subtotal + shippingCost;
 
-  console.log("Cart Items:", cartItems);
+  // console.log("Cart Items:", cartItems);
+  
   return (
     <div className={styles.checkoutContainer}>
       <div className={styles.formSection}>

@@ -1,6 +1,5 @@
 import styles from '../components/Arrivals.module.css';
 import ratingCard from '../assets/ratingCard.svg';
-import { useCart } from "../providers/CartProvider";
 
 interface ProductCardProps {
   id: number;
@@ -25,7 +24,6 @@ const ProductCard = ({
   onMouseLeave,
   onClick
 }: ProductCardProps) => {
-  const { addToCart } = useCart();
 
   return (
     <div
@@ -49,12 +47,6 @@ const ProductCard = ({
           className="bg-orange-500 text-white px-4 py-2 rounded mt-2"
           onClick={e => {
             e.preventDefault();
-            addToCart({
-              id,
-              img,
-              title,
-              price: Number(price.replace("$", "")),
-            });
           }}
         >
           Add to cart

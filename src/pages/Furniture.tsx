@@ -6,10 +6,12 @@ import Categories from '../components/Categories';
 import Arrivals from '../components/Arrivals';
 import Sale from '../components/Sale';
 import Articles from '../components/Articles';
+import { useEffect } from 'react';
 import Email from '../components/Email';
 import Footer from '../components/Footer';
 
-const HomePage1 = () => {
+const Furniture = () => {
+
   return (
     <>
       <FlyMenu />
@@ -24,4 +26,4 @@ const HomePage1 = () => {
   );
 };
 
-export default HomePage1;
+export default Furniture;

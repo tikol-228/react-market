@@ -6,16 +6,22 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "script": "concurrently \"npm run server\" \"npm run dev \"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "server": "json-server --watch db.json --port 3001",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@badgateway/oauth2-client": "^3.2.0",
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/vite": "^4.1.10",
     "@types/react-router-dom": "^5.3.3",
+    "dotenv": "^17.0.0",
+    "json-server": "^1.0.0-beta.3",
+    "msw": "^2.10.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.2",
@@ -28,6 +34,7 @@
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
     "eslint": "^9.22.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
@@ -37,6 +44,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1",
-    "vite": "^6.3.1"
+    "vite": "^6.3.1",
+    "vitest": "^3.2.4"
   }
 }
