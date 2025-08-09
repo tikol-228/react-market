@@ -1,6 +1,26 @@
 {
   "users": [
-    { "id": 1, "name": "John Doe" },
-    { "id": 2, "name": "Jane Smith" }
+    {
+      "id": 1754665962531,
+      "name": "w",
+      "category": "w",
+      "discountPercent": 0,
+      "imageSrc": "",
+      "isNew": true,
+      "oldPrice": 1,
+      "price": 1,
+      "rating": 1
+    },
+    {
+      "id": 1754666125291,
+      "name": "w",
+      "category": "w",
+      "discountPercent": 0,
+      "imageSrc": "",
+      "isNew": true,
+      "oldPrice": 0,
+      "price": 0,
+      "rating": 1
+    }
   ]
 }
