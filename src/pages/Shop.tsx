@@ -11,11 +11,10 @@ import list from "../assets/list.svg";
 import row from "../assets/row.svg";
 import masonry from "../assets/masonry.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, removeProduct, addToCart, Product } from "../store/productsSlice";
+import { fetchProducts, addProduct, removeProduct, addToCart, Product } from "../store/productsSlice";
 import AddProductModal from "../components/AddProductModal";
 import Button from "../components/Button";
 import { RootState } from "../store";
-import { fetchProduct, createProduct, updateProduct as apiUpdateUser, deleteProduct as apiDeleteUser } from '../api/products';
 
 const Shop: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,52 +23,14 @@ const Shop: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [view, setView] = useState<"grid" | "list" | "row" | "masonry">("grid");
   const [sortBy, setSortBy] = useState("default");
-  const [users, setUsers] = useState<Product []>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [formData, setFormData] = useState<{ name: string }>({ name: "" });
-  const [editingUserId, setEditingUserId] = useState<string | null>(null);
-
-  // Fetch users
-  const loadProducts = async () => {
-     try {
-       const data = await fetchProduct();
-       setUsers(data);
-       console.log(data)
-     } catch (err) {
-       setError("Failed to fetch users");
-     }
-  };
-
-  // Delete user
-  const handleDeleteProduct = async (id: string) => {
-    // try {
-    //   await apiDeleteUser(id);
-    //   loadProduct();
-    // } catch (err) {
-    //   setError("Failed to delete user");
-    // }
-  };
-
-  // Update user
-  const handleUpdateProduct = async () => {
-    // if (!formData.name.trim() || !editingUserId) return;
-    // try {
-    //   await apiUpdateUser(editingUserId, { name: formData.name });
-    //   setEditingUserId(null);
-    //   setFormData({ name: "" });
-    //   loadUsers();
-    // } catch (err) {
-    //   setError("Failed to update user");
-    // }
-  };
-
-  useEffect(() => {
-    loadProducts();
-  }, []);
 
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.products);
-  console.log(products)
+  const error = useSelector((state: RootState) => state.products.error);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   const categories = ["All Rooms", "Living Room", "Bedroom", "Kitchen", "Bathroom", "Dining", "Outdoor"];
   const priceRanges = ["All Price", "$0.00 - 99.99", "$100.00 - 199.99", "$200.00 - 299.99", "$300.00 - 399.99", "$400.00+"];
@@ -97,14 +58,8 @@ const Shop: React.FC = () => {
     dispatch(addToCart(id));
   };
 
-  const handleAddProduct = async (newProduct: Product) => {
-     try {
-       await createProduct(newProduct);
-       loadProducts();
-       dispatch(addProduct(newProduct));
-      } catch (err) {
-       setError("Failed to create user");
-     }
+  const handleAddProduct = (newProduct: Product) => {
+    dispatch(addProduct(newProduct));
     setIsOpen(false);
   };
 
@@ -124,7 +79,7 @@ const Shop: React.FC = () => {
       return inCategory && inPrice;
     });
   };
-  
+
   const sortOptions = [
     { value: "default", label: "Default" },
     { value: "price-asc", label: "Price: Low to High" },
@@ -203,7 +158,6 @@ const Shop: React.FC = () => {
                 <AddProductModal
                   onClose={() => setIsOpen(false)}
                   onAddProduct={handleAddProduct}
-                  
                 />
               )}
             </div>

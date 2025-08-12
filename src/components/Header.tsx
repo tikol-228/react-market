@@ -30,6 +30,14 @@ const Header = () => {
     navigate(`${location.pathname}?${params.toString()}`);
   };
 
+  const navLinks = [
+    { to: "/", label: "Home" },
+    { to: "/shop-page", label: "Shop" },
+    { to: "/categories", label: "Categories" },
+    { to: "/about-us", label: "About" },
+    { to: "/contact-us", label: "Contact" },
+  ];
+
   return (
     <header className="w-full bg-white px-4 md:px-8 py-4 flex items-center justify-between shadow-md sticky top-0 z-50">
       <div className="flex items-center">
@@ -37,11 +45,19 @@ const Header = () => {
       </div>
 
       <nav className="hidden md:flex gap-8 flex-grow justify-center">
-        <Link to="/" className="text-sm uppercase tracking-wide text-gray-800 hover:text-[#e07a5f] font-medium">Home</Link>
-        <Link to="/shop-page" className="text-sm uppercase tracking-wide text-gray-800 hover:text-[#e07a5f] font-medium">Shop</Link>
-        <Link to="/categories" className="text-sm uppercase tracking-wide text-gray-800 hover:text-[#e07a5f] font-medium">Categories</Link>
-        <Link to="/about-us" className="text-sm uppercase tracking-wide text-gray-800 hover:text-[#e07a5f] font-medium">About</Link>
-        <Link to="/contact-us" className="text-sm uppercase tracking-wide text-gray-800 hover:text-[#e07a5f] font-medium">Contact</Link>
+        {navLinks.map(link => (
+          <Link
+            key={link.to}
+            to={link.to}
+            className={`text-sm uppercase tracking-wide font-medium transition-colors duration-200 ${
+              location.pathname === link.to
+                ? "text-[#222] border-b-2 border-[#222] font-bold"
+                : "text-[#a3a3a3] hover:text-[#222]"
+            }`}
+          >
+            {link.label}
+          </Link>
+        ))}
       </nav>
 
       <div className="flex items-center gap-4 md:gap-6">

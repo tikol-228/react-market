@@ -1,7 +1,7 @@
 {
-  "users": [
+  "products": [
     {
-      "id": 1754665962531,
+      "id": "1754665962531",
       "name": "w",
       "category": "w",
       "discountPercent": 0,
@@ -12,7 +12,18 @@
       "rating": 1
     },
     {
-      "id": 1754666125291,
+      "id": "1754666125291",
+      "name": "w",
+      "category": "w",
+      "discountPercent": 0,
+      "imageSrc": "",
+      "isNew": true,
+      "oldPrice": 0,
+      "price": 0,
+      "rating": 1
+    },
+    {
+      "id": 1754908826461,
       "name": "w",
       "category": "w",
       "discountPercent": 0,
