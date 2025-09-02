@@ -1,17 +1,23 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../store/productsSlice";
+import { RootState } from "../store";
+import Button from "./Button";
 import styles from "./Card.module.css";
 
 type ProductCardProps = {
+  id: number;
   name: string;
   price: number;
   imageSrc: string;
+  onAddToCart?: () => void;
   isNew?: boolean;
   discountPercent?: number;
-  onAddToCart?: () => void;
-  onDelete?: () => void; // 👈 добавили
+  onDelete?: () => void;
 };
 
 const Card: React.FC<ProductCardProps> = ({
+  id,
   name,
   price,
   imageSrc,
@@ -20,6 +26,11 @@ const Card: React.FC<ProductCardProps> = ({
   onAddToCart,
   onDelete
 }) => {
+  const dispatch = useDispatch();
+  const cartProductIds = useSelector((state: RootState) => state.products.cartProductIds);
+
+  const isInCart = cartProductIds.includes(id);
+
   return (
     <div className={styles.productCard}>
       <div className={styles.badgeContainer}>
@@ -35,15 +46,17 @@ const Card: React.FC<ProductCardProps> = ({
           >
             tikol
           </button>
-
         )}
       </div>
 
       <img src={imageSrc} alt={name} className={styles.productImage} />
 
-      <button className={styles.addToCart} onClick={onAddToCart}>
-        Add to cart
-      </button>
+      <Button
+        className={`${styles.addToCart} ${isInCart ? styles.active : ""}`}
+        onClick={onAddToCart}
+      >
+        {isInCart ? "Remove from cart" : "Add to cart"}
+      </Button>
 
       <div className={styles.productInfo}>
         <div className={styles.stars}>★★★★★</div>

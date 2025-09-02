@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Input from "./Input";
+import { memo } from "react";
 import Button from "./Button";
 
 interface AddProductModalProps {

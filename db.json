@@ -1,30 +1,8 @@
 {
   "products": [
     {
-      "id": "1754665962531",
-      "name": "w",
-      "category": "w",
-      "discountPercent": 0,
-      "imageSrc": "",
-      "isNew": true,
-      "oldPrice": 1,
-      "price": 1,
-      "rating": 1
-    },
-    {
-      "id": "1754666125291",
-      "name": "w",
-      "category": "w",
-      "discountPercent": 0,
-      "imageSrc": "",
-      "isNew": true,
-      "oldPrice": 0,
-      "price": 0,
-      "rating": 1
-    },
-    {
-      "id": 1754908826461,
-      "name": "w",
+      "id": 1756752063767,
+      "name": "s",
       "category": "w",
       "discountPercent": 0,
       "imageSrc": "",

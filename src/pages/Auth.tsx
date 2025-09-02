@@ -71,12 +71,9 @@ const Auth = () => {
     };
     users.push(newUser);
     saveUsers(users);
-    // Сохраняем userId и username
     setToastMessage("Registration successful!");
     setShowToast(true);
-    // setTimeout(() => {
-    //   navigate("/home");
-    // }, 1000);
+    navigate("/");
   };
 
   // Вход
@@ -96,7 +93,7 @@ const Auth = () => {
     localStorage.setItem("activeUser", JSON.stringify({...user, isAuth: true})); 
     setToastMessage("Login successful!");
     setShowToast(true);
-    navigate("/home");
+    navigate("/");
   };
 
   const onSubmit = (data: FormData) => {
@@ -185,6 +182,7 @@ const Auth = () => {
 
           <Button type="submit" className="h-12 bg-black text-white text-base font-semibold rounded-md hover:bg-black/80 transition">
             {isSignIn ? 'Sign In' : 'Sign Up'}
+            
           </Button>
           <AuthBtnGoogle/>
         </div>

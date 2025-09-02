@@ -29,6 +29,12 @@ const Cart: React.FC = () => {
   const products = useSelector((state: RootState) => state.products.products);
   const cartProductIds = useSelector((state: RootState) => state.products.cartProductIds);
 
+  // Проверка: выводим содержимое корзины в консоль при каждом рендере
+  React.useEffect(() => {
+    console.log("cartProductIds:", cartProductIds);
+    console.log("cartItems:", products.filter(product => cartProductIds.includes(product.id)));
+  }, [cartProductIds, products]);
+
   // Формируем массив товаров в корзине
   const cartItems: CartItem[] = products
     .filter(product => cartProductIds.includes(product.id))

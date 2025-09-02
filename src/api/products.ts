@@ -1,9 +1,9 @@
 import axios from "axios";
 import { Product } from "../store/productsSlice";
 
-const API_URL = "http://localhost:3001/users";
+const API_URL = "http://localhost:3001/products";
 
-export async function fetchProduct(): Promise<Product[]> {
+export async function fetchProducts(): Promise<Product[]> {
   const res = await axios.get<Product[]>(API_URL);
   return res.data;
 }

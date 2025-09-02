@@ -72,9 +72,6 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
         </Link>
         <Link href="#">Shop</Link>
         <Link href="#">Categories</Link>
-        <Link href="#" onClick={handleContactUsClick}>
-          About
-        </Link>
         <Link href="#">Contact</Link>
       </nav>
       <div className={styles.headerActions}>

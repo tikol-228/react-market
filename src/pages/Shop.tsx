@@ -11,7 +11,8 @@ import list from "../assets/list.svg";
 import row from "../assets/row.svg";
 import masonry from "../assets/masonry.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts, addProduct, removeProduct, addToCart, Product } from "../store/productsSlice";
+import { addProduct, removeProduct, addToCart, Product, addProducts } from "../store/productsSlice";
+import { createProduct, fetchProducts } from "../api/products";
 import AddProductModal from "../components/AddProductModal";
 import Button from "../components/Button";
 import { RootState } from "../store";
@@ -29,7 +30,9 @@ const Shop: React.FC = () => {
   const error = useSelector((state: RootState) => state.products.error);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    fetchProducts().then((res) => {
+      dispatch(addProducts(res))
+    })
   }, [dispatch]);
 
   const categories = ["All Rooms", "Living Room", "Bedroom", "Kitchen", "Bathroom", "Dining", "Outdoor"];
@@ -58,14 +61,18 @@ const Shop: React.FC = () => {
     dispatch(addToCart(id));
   };
 
-  const handleAddProduct = (newProduct: Product) => {
-    dispatch(addProduct(newProduct));
+  const handleAddProduct = async (newProduct: Omit<Product, "id">) => {
+    await createProduct(newProduct); // POST-запрос на сервер
+    const updated = await fetchProducts(); // Получить обновлённый список
+    dispatch(addProducts(updated)); // Обновить Redux
     setIsOpen(false);
   };
 
   const handleDeleteCard = (id: number) => {
     dispatch(removeProduct(id));
   };
+
+  const ActionCar
 
   const getFilteredCards = () => {
     return products.filter(card => {
@@ -211,19 +218,24 @@ const Shop: React.FC = () => {
                 : styles.cardMasonry
             }
           >
-            {getSortedCards(getFilteredCards()).map(card => (
-              <div key={card.id} className={styles.cardWrapper}>
-                <Card
-                  name={card.name}
-                  price={card.price}
-                  imageSrc={card.imageSrc}
-                  isNew={card.isNew}
-                  discountPercent={card.discountPercent}
-                  onAddToCart={() => handleAddToCart(card.id)}
-                  onDelete={() => handleDeleteCard(card.id)}
-                />
-              </div>
-            ))}
+            {getSortedCards(getFilteredCards()).length > 0 ? (
+              getSortedCards(getFilteredCards()).map(card => (
+                <div key={card.id} className={styles.cardWrapper}>
+                  <Card
+                    name={card.name}
+                    price={card.price}
+                    imageSrc={card.imageSrc}
+                    isNew={card.isNew}
+                    discountPercent={card.discountPercent}
+                    id={card.id}
+                    onAddToCart={() => handleAddToCart(card.id)}
+                    onDelete={() => handleDeleteCard(card.id)}
+                  />
+                </div>
+              ))
+            ) : 
+              <h2>No products found.</h2>
+            }
           </div>
         </div>
       </div>

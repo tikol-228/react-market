@@ -39,6 +39,9 @@ const productsSlice = createSlice({
         (product) => product.id !== action.payload
       );
     },
+    addProducts: (state, action: PayloadAction<Product[]>) => {
+      state.products = action.payload;
+    },
     addToCart: (state, action: PayloadAction<number>) => {
       state.cartProductIds.push(action.payload);
       console.log(state.cartProductIds);
@@ -59,5 +62,5 @@ const productsSlice = createSlice({
   },
 });
 
-export const { addProduct, removeProduct, addToCart, logText } = productsSlice.actions;
+export const { addProduct, removeProduct, addProducts, addToCart, logText } = productsSlice.actions;
 export default productsSlice.reducer;
