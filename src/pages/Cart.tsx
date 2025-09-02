@@ -44,7 +44,7 @@ const Cart: React.FC = () => {
       color: product.color,
       img: product.imageSrc,
       price: product.price,
-      quantity: 1, // если нужна поддержка количества, доработайте логику
+      quantity: 1,
     }));
 
   // Удалить товар из корзины
@@ -76,7 +76,12 @@ const Cart: React.FC = () => {
               <Title type={5}>Product</Title>
               <Title type={5}>Quantity</Title>
               <Title type={5}>Price</Title>
-              {cartItems.map((item: CartItem) => (
+            </div>
+            {/* Рендер карточек товаров в корзине */}
+            {cartItems.length === 0 ? (
+              <h2>Cart is empty</h2>
+            ) : (
+              cartItems.map((item: CartItem) => (
                 <div key={item.id} className={styles.cartItemRow}>
                   <div className={styles.productInfo}>
                     <Img src={item.img} className={styles.cartFlyImg} alt={item.title} />
@@ -95,18 +100,18 @@ const Cart: React.FC = () => {
                   <p>${item.price.toFixed(2)}</p>
                   <p>${(item.price * item.quantity).toFixed(2)}</p>
                 </div>
-              ))}
-              {/* Coupon Input */}
-              <div className={styles.coupon}>
-                <Title type={3}>Have a coupon?</Title>
-                <p>Add your code for an instant cart discount</p>
-                <Input
-                  type="text"
-                  placeholder="Coupon Code"
-                  onChange={() => {}}
-                />
-                <Button>Apply</Button>
-              </div>
+              ))
+            )}
+            {/* Coupon Input */}
+            <div className={styles.coupon}>
+              <Title type={3}>Have a coupon?</Title>
+              <p>Add your code for an instant cart discount</p>
+              <Input
+                type="text"
+                placeholder="Coupon Code"
+                onChange={() => {}}
+              />
+              <Button>Apply</Button>
             </div>
           </div>
           {/* Cart Summary */}

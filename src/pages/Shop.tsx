@@ -72,7 +72,6 @@ const Shop: React.FC = () => {
     dispatch(removeProduct(id));
   };
 
-  const ActionCar
 
   const getFilteredCards = () => {
     return products.filter(card => {
