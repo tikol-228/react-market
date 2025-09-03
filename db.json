@@ -1,12 +1,23 @@
 {
   "products": [
     {
-      "id": 1756752063767,
+      "id": "1756752063767",
       "name": "s",
       "category": "w",
       "discountPercent": 0,
       "imageSrc": "",
       "isNew": true,
+      "oldPrice": 0,
+      "price": 0,
+      "rating": 1
+    },
+    {
+      "id": "1322",
+      "name": "s",
+      "category": "s",
+      "discountPercent": 0,
+      "imageSrc": "",
+      "isNew": false,
       "oldPrice": 0,
       "price": 0,
       "rating": 1

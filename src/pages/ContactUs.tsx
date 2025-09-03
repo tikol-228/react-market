@@ -1,6 +1,6 @@
 import React from 'react';
 import Img from '../components/Img'
-import subHeader from '../assets/subHeader3.svg'
+import subHeader from '../assets/subHeader3.jpg'
 import styles from '../pages/ContactUs.module.css'
 import market from '../assets/market.svg'
 import phone from '../assets/phone.svg'

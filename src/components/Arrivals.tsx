@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import arrow1 from "../assets/arrow1.svg";
-import cardImg1 from "../assets/cardImg1.svg";
-import cardImg2 from "../assets/cardImg2.svg";
-import cardImg3 from "../assets/cardImg3.svg";
-import cardImg4 from "../assets/cardImg4.svg";
-import cardImg5 from "../assets/cardImg5.svg";
+import cardImg1 from "../assets/cardImg1.jpg";
+import cardImg2 from "../assets/cardImg2.jpg";
+import cardImg3 from "../assets/cardImg3.jpg";
+import cardImg4 from "../assets/cardImg4.jpg";
+import cardImg5 from "../assets/cardImg5.jpg";
 import cardImg6 from "../assets/cardImg6.svg";
 import ProductCard from "../components/ProductCard";
 

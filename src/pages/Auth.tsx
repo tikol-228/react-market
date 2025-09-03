@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Button from '../components/Button';
 import AuthBtnGoogle from "../components/AuthBtnGoogle";
 import AuthToast from '../components/AuthToast';
-import auth from '../assets/auth.svg';
+import auth from '../assets/auth.jpg';
 
 interface FormData {
   name?: string;

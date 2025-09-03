@@ -1,6 +1,6 @@
-import categories from '../assets/categories.svg';
-import categories2 from '../assets/categories2.svg';
-import cardImg5 from '../assets/cardImg5.svg';
+import categories from '../assets/categories.jpg';
+import categories2 from '../assets/categories2.jpg';
+import cardImg5 from '../assets/cardImg5.jpg';
 import arrow1 from '../assets/arrow1.svg';
 import Link from './Link'; // если ты используешь свою кастомную ссылку
 
@@ -8,7 +8,7 @@ const Categories = () => {
   return (
     <section className="max-w-[1440px] mx-auto px-5 sm:px-20 grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Living Room */}
-      <div className="relative h-[400px] sm:h-[500px] lg:h-[575px] rounded-xl overflow-hidden bg-[#F3F5F7]">
+      <div className="relative h-[400px] sm:h-[500px] lg:h-[575px] rounded-xl overflow-hidden">
         <div className="absolute bottom-5 left-5 flex flex-col items-start gap-2 text-black">
           <h2 className="text-2xl sm:text-3xl font-semibold">Living Room</h2>
           <Link
@@ -28,7 +28,7 @@ const Categories = () => {
       {/* Right side: Bedroom and Kitchen */}
       <div className="flex flex-col gap-6">
         {/* Bedroom */}
-        <div className="relative h-[240px] sm:h-[280px] rounded-xl overflow-hidden bg-[#F3F5F7]">
+        <div className="relative h-[240px] sm:h-[280px] rounded-xl overflow-hidden">
           <div className="absolute bottom-5 left-5 flex flex-col items-start gap-2 text-black">
             <h2 className="text-2xl font-semibold">Bedroom</h2>
             <Link
@@ -46,7 +46,7 @@ const Categories = () => {
         </div>
 
         {/* Kitchen */}
-        <div className="relative h-[240px] sm:h-[280px] rounded-xl overflow-hidden bg-[#F3F5F7]">
+        <div className="relative h-[240px] sm:h-[280px] rounded-xl overflow-hidden">
           <div className="absolute bottom-5 left-5 flex flex-col items-start gap-2 text-black">
             <h2 className="text-2xl font-semibold">Kitchen</h2>
             <Link

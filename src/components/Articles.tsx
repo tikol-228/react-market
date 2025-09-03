@@ -1,6 +1,6 @@
-import subHeader2 from '../assets/subHeader2.svg';
-import arrivalImg1 from '../assets/arrivalImg1.svg';
-import arrivalImg2 from '../assets/arrivalImg2.svg';
+import subHeader2 from '../assets/subHeader2.jpg';
+import arrivalImg1 from '../assets/arrivalImg1.jpg';
+import arrivalImg2 from '../assets/arrivalImg2.jpg';
 import Link from './Link';
 import arrow1 from '../assets/arrow1.svg';
 
