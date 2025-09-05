@@ -6,7 +6,7 @@ import { OAuth2Client, generateCodeVerifier } from "@badgateway/oauth2-client";
 dotenv.config();
 
 const app = express();
-const port = 3001;
+const port = 8000;
 
 // Для PKCE: храним codeVerifier на пользователя (в демо — глобально, для продакшена — в сессии)
 let codeVerifierGlobal = "";

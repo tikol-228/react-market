@@ -1,4 +1,4 @@
-import subHeader3 from '../assets/subHeader3.jpg';
+// import subHeader3 from '../assets/subHeader3.svg';
 import Link from './Link';
 import arrow1 from '../assets/arrow1.svg';
 
@@ -8,7 +8,7 @@ const Sale = () => {
       {/* Левая часть - картинка */}
       <div className="flex-1">
         <img
-          src={subHeader3}
+          // src={subHeader3}
           alt="Sale banner"
           className="w-full h-auto rounded-lg object-cover"
         />
