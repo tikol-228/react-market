@@ -6,7 +6,7 @@ import cardImg2 from "../assets/cardImg2.jpg";
 import cardImg3 from "../assets/cardImg3.jpg";
 import cardImg4 from "../assets/cardImg4.jpg";
 import cardImg5 from "../assets/cardImg5.jpg";
-import cardImg6 from "../assets/cardImg6.svg";
+import cardImg6 from "../assets/cardImg6.jpg";
 import ProductCard from "../components/ProductCard";
 
 interface Card {
