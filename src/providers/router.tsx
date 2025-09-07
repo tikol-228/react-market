@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import HomeLayout from "../pages/HomeLayout";
-import Technique from "../pages/Technique";
-import ClothesShop from "../pages/ClothesShop";
+// import Technique from "../pages/Technique";
+// import ClothesShop from "../pages/ClothesShop";
 import ContactUs2 from "../pages/ContactUs";
 import Shop from "../pages/Shop";
 import Blog from "../pages/Blog";
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
         element: <HomeLayout />,
         children: [
           { index: true, element: <Furniture /> }, // теперь "/" ведёт на Furniture
-          { path: 'tecnique', element: <Technique /> },
-          { path: 'clothes-shop', element: <ClothesShop /> },
+          // { path: 'tecnique', element: <Technique /> },
+          // { path: 'clothes-shop', element: <ClothesShop /> },
           { path: 'contact-us', element: <ContactUs2 /> },
           { path: 'shop-page', element: <Shop /> },
           {path: 'categories', element: <Categories/>},
