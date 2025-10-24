@@ -1,6 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../store/productsSlice";
+import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import Button from "./Button";
 import styles from "./Card.module.css";
@@ -26,7 +25,7 @@ const Card: React.FC<ProductCardProps> = ({
   onAddToCart,
   onDelete
 }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const cartProductIds = useSelector((state: RootState) => state.products.cartProductIds);
 
   const isInCart = cartProductIds.includes(id);

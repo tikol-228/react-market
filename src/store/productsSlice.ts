@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import products from "../mock/products";
-import { idText } from "typescript";
 
 export type Product = {
+  color?: any;
   name: string,
   category: string,
   discountPercent: number,

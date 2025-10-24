@@ -1,5 +1,3 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import post1 from '../assets/post1.svg'
 import post2 from '../assets/post2.svg'
 import post3 from '../assets/post3.svg'

@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import styles from './Cart.module.css';
 import cartCross from '../assets/cartCross.svg';
 import Button from '../components/Button';
@@ -55,10 +53,12 @@ const Cart: React.FC = () => {
   // Для количества (если реализовано в Redux, иначе убрать)
   const minusItem = (item: CartItem) => {
     // Реализуйте логику уменьшения количества через Redux, если нужно
+    console.log(item)
   };
 
   const plusItem = (item: CartItem) => {
     // Реализуйте логику увеличения количества через Redux, если нужно
+    console.log(item)
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);

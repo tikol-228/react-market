@@ -11,7 +11,7 @@ import list from "../assets/list.svg";
 import row from "../assets/row.svg";
 import masonry from "../assets/masonry.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, removeProduct, addToCart, Product, addProducts } from "../store/productsSlice";
+import { removeProduct, addToCart, Product, addProducts } from "../store/productsSlice";
 import { createProduct, fetchProducts } from "../api/products";
 import AddProductModal from "../components/AddProductModal";
 import Button from "../components/Button";
@@ -27,7 +27,6 @@ const Shop: React.FC = () => {
 
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.products);
-  const error = useSelector((state: RootState) => state.products.error);
 
   useEffect(() => {
     fetchProducts().then((res) => {

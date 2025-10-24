@@ -1,23 +1,23 @@
 import React from "react";
 
 interface InputProps {
-  type: string;
   placeholder?: string;
-  value?: string | number;
-  checked?: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  style?: React.CSSProperties;
+  className?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
+  name?: string;
 }
 
-const Input = ({ type, placeholder, value, onChange, checked, style }: InputProps) => {
+const Input = ({ placeholder, className, value, onChange, type, name }: InputProps) => {
   return (
       <input
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        checked={checked}
-        style={style}
+        name={name}
+        className={className}
       />
   );
 };

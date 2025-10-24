@@ -6,8 +6,6 @@ import table2 from '../assets/table2.svg';
 import table3 from '../assets/table3.svg';
 import Input from '../components/Input';
 import Button from '../components/Button';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Email from '../components/Email';
 
 interface Comment {

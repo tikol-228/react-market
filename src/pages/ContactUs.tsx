@@ -7,12 +7,10 @@ import phone from '../assets/phone.svg'
 import email from '../assets/email.svg'
 import map from '../assets/map.svg'
 import Values from '../components/Values';
-import Footer from '../components/Footer';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import arrorw1 from '../assets/arrow1.svg'
 import Link from '../components/Link';
-import Header from '../components/Header';
 
 const ContactUs2: React.FC = () => {
 

@@ -1,18 +1,14 @@
-import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import HomeLayout from "../pages/HomeLayout";
 // import Technique from "../pages/Technique";
 // import ClothesShop from "../pages/ClothesShop";
 import ContactUs2 from "../pages/ContactUs";
 import Shop from "../pages/Shop";
-import Blog from "../pages/Blog";
-import BlogPost from "../pages/BlogPost";
 import Cart from "../pages/Cart";
-import CheckOut from "../pages/CheckOut";
 import Auth from "../pages/Auth";
 import Furniture from "../pages/Furniture";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Account from "../pages/Account";
-import ProductDetails from "../pages/ProductDetails";
 import Categories from "../components/Categories";
 
 const ProtectedLayout = () => (

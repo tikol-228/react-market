@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from '../components/Input'
 import Button from '../components/Button'
@@ -18,7 +18,7 @@ const Account = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [message, setMessage] = useState("");
   const [photo, setPhoto] = useState<File | null>(null);
-  const [username, setUsername] = useState<string | null>(null);
+  const [username] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
 
@@ -135,7 +135,12 @@ const Account = () => {
                     <Input placeholder={'New password'} name="password" value={form.password} onChange={handleChange} />
                     </label>
                     <label className={styles.accountInput}>Repeat new password
-                    <Input placeholder={'Repeat new password'} />
+                    <Input 
+                        type="password"
+                        placeholder={'Repeat new password'}
+                        onChange={(e) => handleChange(e)}
+                        name="repeatPassword"
+                    />
                     </label>
                 </div>
                 <Button className={styles.buttonSave} type="submit">Save changes</Button>

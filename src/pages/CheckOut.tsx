@@ -2,15 +2,16 @@ import React from "react";
 import styles from "./CheckOut.module.css";
 
 const CheckOut: React.FC = () => {
+  const cartItems: any[] = []; // Replace this with your actual cart items from state management
 
-  // const subtotal = cartItems.reduce(
-  //   (sum, item) => sum + item.price * item.quantity,
-  //   0
-  // );
-  // const shippingCost = 0;
-  // const total = subtotal + shippingCost;
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  const shippingCost = 0;
+  const total = subtotal + shippingCost;
 
-  // console.log("Cart Items:", cartItems);
+  console.log("Cart Items:", cartItems);
   
   return (
     <div className={styles.checkoutContainer}>

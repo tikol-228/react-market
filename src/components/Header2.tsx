@@ -25,9 +25,9 @@ const Header2: React.FC<Header2Props> = ({ onAddToCart }) => {
     setCartOpen((prev) => !prev);
   };
 
-  const handleContactUsClick = () => {
-    navigate('/ContactUs');
-  };
+  // const handleContactUsClick = () => {
+  //   navigate('/ContactUs');
+  // };
 
   const handleClickOutside = (event: MouseEvent) => {
     if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
